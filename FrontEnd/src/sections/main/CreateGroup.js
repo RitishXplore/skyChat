@@ -6,7 +6,7 @@ import * as Yup from 'yup';
 import FormProvider from '../../components/hook-form/FormProvider';
 import { RHFTextField } from '../../components/hook-form';
 import RHFAutocomplete from '../../components/hook-form/RHFAutocomplete';
-import { multiple } from './../../components/Conversation/MsgTypes';
+import { multiple } from '../../components/Conversation/MsgTypes';
 
 const MEMBERS = ['Name 1', 'Name 2', 'Name 3' ];
 

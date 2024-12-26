@@ -3,13 +3,13 @@ import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import Logo from '../../assets/Images/logo.ico'
 
-const isAuthenticated = true;
+// const isAuthenticated = true;
 
 const MainLayout = () => {
 
-  if(isAuthenticated){
-    return <Navigate to='/app'/>;
-  }
+  // if(isAuthenticated){
+  //   return <Navigate to='/app'/>;
+  // }
 
   return (
     <>
