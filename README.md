@@ -1,55 +1,52 @@
-Here’s an accurate and refined **README.md** file for your **SkyChat** project:
-
-```markdown
 # SkyChat
 
 SkyChat is a dynamic messaging and communication platform designed for seamless interaction among multiple users. It supports real-time messaging, voice/video calls, group chats, and advanced presence tracking. Built with scalability and performance in mind, SkyChat leverages modern technologies like **Node.js**, **React**, **MongoDB**, and **Socket.IO**.
 
-## 🚀 **Key Features**
+## 🚀 Key Features
 
-## 🔑 **User Authentication**
+### 🔑 User Authentication
 - Email and phone verification.
 - Integration with **Google**, **GitHub**, and **Facebook** authentication providers.
 
-## 💬 **Real-time Messaging**
+### 💬 Real-time Messaging
 - 1:1 and group messaging.
 - Support for text, images, videos, and file sharing.
 - Chat status indicators: **Sent**, **Delivered**, **Read**.
 
-## 📞 **Voice & Video Calls**
+### 📞 Voice & Video Calls
 - One-on-one and group calls.
 - Call statuses: **Ongoing**, **Ended**, **Missed**.
 
-## 👥 **Group Management**
+### 👥 Group Management
 - Create and manage groups.
 - Add/Remove members and assign roles (**Admin**/**Member**).
 
-## 🛡️ **User Profile & Privacy**
+### 🛡️ User Profile & Privacy
 - Customizable profile with **profile picture**, **status**, and **name**.
 - Privacy and notification settings.
 
-## 🟢 **Presence Tracking**
+### 🟢 Presence Tracking
 - Real-time online/offline status.
 - Last active timestamps.
 
-## ❤️ **Message Reactions**
+### ❤️ Message Reactions
 - React to messages with emojis.
 
-## 🔔 **Notifications**
+### 🔔 Notifications
 - Push notifications for messages, calls, mentions, and activities.
 
-## 🚫 **Blocked List & Reporting**
+### 🚫 Blocked List & Reporting
 - Block or report inappropriate users.
 
-## 📊 **Polls**
+### 📊 Polls
 - Create and vote in group polls.
 
-### 🔒 **Encryption**
+### 🔒 Encryption
 - End-to-end encryption for secure messaging.
 
 ---
 
-## 🛠️ **Backend Structure**
+## 🛠️ Backend Structure
 
 SkyChat's backend is powered by **Node.js**, **Express.js**, and **MongoDB**. Below are key database models:
 
@@ -67,30 +64,31 @@ SkyChat's backend is powered by **Node.js**, **Express.js**, and **MongoDB**. Be
 
 ---
 
-## 🏗️ **Future Enhancements**
+## 🏗️ Future Enhancements
 
-1. **Scalability Enhancements**  
-   - Implement **Redis** for caching and session management.  
+1. **Scalability Enhancements**
+   - Implement **Redis** for caching and session management.
    - Use **Kafka** and **RabbitMQ** for real-time event handling.
 
-2. **Mobile Applications**  
+2. **Mobile Applications**
    - Build native **iOS/Android** apps using **React Native**.
 
-3. **Admin Dashboard**  
+3. **Admin Dashboard**
    - Web-based panel for monitoring and managing app activities.
 
-4. **Advanced Analytics**  
+4. **Advanced Analytics**
    - Insights on user activity and app performance.
 
 ---
 
-## ⚙️ **Installation**
+## ⚙️ Installation
 
-### **Prerequisites**
+### Prerequisites
 - Node.js (v16+)
 - MongoDB (local/cloud instance)
 
-### **Setup**
+### Setup
+
 
 1. **Clone the Repository**  
    ```bash
