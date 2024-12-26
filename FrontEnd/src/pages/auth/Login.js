@@ -9,7 +9,7 @@ const Login = () => {
     <>
     <Stack spacing={2} sx={{mb:5, position:'relative'}}>
       <Typography variant='h4'>
-        Login to WeChat
+        Login to SkyChat
       </Typography>
       <Stack direction='row' spacing={0.5}>
         <Typography variant='body2'>New User?</Typography>

@@ -22,8 +22,8 @@ const RegisterForm = () => {
     const defaultValues = {
       firstName:'',
       lastName:'',
-      email:'dulanjali@gmail.com',
-      password:'dula@123'
+      email:'ritishup07@gmail.com',
+      password:'ritish@123'
     };
   
     const methods = useForm({

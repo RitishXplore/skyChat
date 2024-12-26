@@ -19,8 +19,8 @@ const LoginForm = () => {
   });
 
   const defaultValues = {
-    email:'dulanjali@gmail.com',
-    password:'dula@123'
+    email:'ritishup07@gmail.com',
+    password:'ritish@123'
   };
 
   const methods = useForm({
