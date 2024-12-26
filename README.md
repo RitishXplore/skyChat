@@ -7,41 +7,41 @@ SkyChat is a dynamic messaging and communication platform designed for seamless 
 
 ## 🚀 **Key Features**
 
-### 🔑 **User Authentication**
+## 🔑 **User Authentication**
 - Email and phone verification.
 - Integration with **Google**, **GitHub**, and **Facebook** authentication providers.
 
-### 💬 **Real-time Messaging**
+## 💬 **Real-time Messaging**
 - 1:1 and group messaging.
 - Support for text, images, videos, and file sharing.
 - Chat status indicators: **Sent**, **Delivered**, **Read**.
 
-### 📞 **Voice & Video Calls**
+## 📞 **Voice & Video Calls**
 - One-on-one and group calls.
 - Call statuses: **Ongoing**, **Ended**, **Missed**.
 
-### 👥 **Group Management**
+## 👥 **Group Management**
 - Create and manage groups.
 - Add/Remove members and assign roles (**Admin**/**Member**).
 
-### 🛡️ **User Profile & Privacy**
+## 🛡️ **User Profile & Privacy**
 - Customizable profile with **profile picture**, **status**, and **name**.
 - Privacy and notification settings.
 
-### 🟢 **Presence Tracking**
+## 🟢 **Presence Tracking**
 - Real-time online/offline status.
 - Last active timestamps.
 
-### ❤️ **Message Reactions**
+## ❤️ **Message Reactions**
 - React to messages with emojis.
 
-### 🔔 **Notifications**
+## 🔔 **Notifications**
 - Push notifications for messages, calls, mentions, and activities.
 
-### 🚫 **Blocked List & Reporting**
+## 🚫 **Blocked List & Reporting**
 - Block or report inappropriate users.
 
-### 📊 **Polls**
+## 📊 **Polls**
 - Create and vote in group polls.
 
 ### 🔒 **Encryption**
