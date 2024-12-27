@@ -1,0 +1,1 @@
+{"level":"error","message":"MongoDB connection error: ReferenceError: mongo is not defined"}
