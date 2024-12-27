@@ -2,14 +2,16 @@ import fs from 'fs';
 import path from 'path';
 import winston from 'winston';
 import config from '../../config/config.env.js';
-
-/** Logger Directory Setup */
 import { fileURLToPath } from 'url';
 
-// Get the directory name using import.meta.url
+/** Logger Directory Setup */
+// Get the root directory of the `BackEnd` folder
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const logDirectory = path.join(__dirname, '../../logs');
+
+// Navigate to BackEnd directory
+const backEndRoot = path.resolve(__dirname, '../../../'); // Move up from src to BackEnd
+const logDirectory = path.join(backEndRoot, 'logs');
 
 // Ensure the 'logs' directory exists, create if not
 if (!fs.existsSync(logDirectory)) {
@@ -19,43 +21,27 @@ if (!fs.existsSync(logDirectory)) {
 /** Logger Configuration */
 export const logger = winston.createLogger({
     level: 'info',  // Set default logging level to 'info'
-    format: winston.format.printf(({ level, message, timestamp }) => {
-        // Custom log format without additional_info
-        return JSON.stringify({
-            date: timestamp,
-            message: message,
-            level: level
-        });
-    }),
+    format: winston.format.combine(
+        winston.format.timestamp({
+            format: 'YYYY-MM-DD HH:mm:ss' // Local timezone timestamp
+        }),
+        winston.format.printf(({ level, message, timestamp }) => {
+            return JSON.stringify({
+                date: timestamp,
+                message: message,
+                level: level
+            });
+        })
+    ),
     transports: [
         /** Log errors to a file */
         new winston.transports.File({
-            filename: path.join(logDirectory, 'error.log'), 
-            level: 'error',  // Only errors will be logged here
-            format: winston.format.combine(
-                winston.format.timestamp(),  // Add timestamp to each log entry
-                winston.format.printf(({ level, message, timestamp }) => {
-                    return JSON.stringify({
-                        date: timestamp,
-                        message: message,
-                        level: level
-                    });
-                })
-            ),
+            filename: path.join(logDirectory, 'error.log'),
+            level: 'error'
         }),
         /** Log all logs to the combined.log file */
         new winston.transports.File({
-            filename: path.join(logDirectory, 'combined.log'),
-            format: winston.format.combine(
-                winston.format.timestamp(),  // Add timestamp to each log entry
-                winston.format.printf(({ level, message, timestamp }) => {
-                    return JSON.stringify({
-                        date: timestamp,
-                        message: message,
-                        level: level
-                    });
-                })
-            ),
+            filename: path.join(logDirectory, 'combined.log')
         }),
     ]
 });
@@ -64,7 +50,9 @@ export const logger = winston.createLogger({
 if (config.NODE_ENV !== 'production') {
     logger.add(new winston.transports.Console({
         format: winston.format.combine(
-            winston.format.timestamp(),  // Add timestamp to console logs
+            winston.format.timestamp({
+                format: 'YYYY-MM-DD HH:mm:ss' // Local timezone timestamp
+            }),
             winston.format.printf(({ level, message, timestamp }) => {
                 return JSON.stringify({
                     date: timestamp,
@@ -79,7 +67,6 @@ if (config.NODE_ENV !== 'production') {
 /** Stream Method for Logging */
 logger.stream = {
     write: (message) => {
-        // Trim the message and log it at the 'info' level
         logger.info(message.trim());
     },
 };
