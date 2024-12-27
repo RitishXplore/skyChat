@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import winston from "winston";
+import winston from 'winston';
 import config from '../../config/config.env.js';
 
 /** Logger Directory Setup */
@@ -19,16 +19,43 @@ if (!fs.existsSync(logDirectory)) {
 /** Logger Configuration */
 export const logger = winston.createLogger({
     level: 'info',  // Set default logging level to 'info'
-    format: winston.format.json(),  // Logs will be in JSON format
+    format: winston.format.printf(({ level, message, timestamp }) => {
+        // Custom log format without additional_info
+        return JSON.stringify({
+            date: timestamp,
+            message: message,
+            level: level
+        });
+    }),
     transports: [
         /** Log errors to a file */
         new winston.transports.File({
             filename: path.join(logDirectory, 'error.log'), 
-            level: 'error'  // Only errors will be logged here
+            level: 'error',  // Only errors will be logged here
+            format: winston.format.combine(
+                winston.format.timestamp(),  // Add timestamp to each log entry
+                winston.format.printf(({ level, message, timestamp }) => {
+                    return JSON.stringify({
+                        date: timestamp,
+                        message: message,
+                        level: level
+                    });
+                })
+            ),
         }),
         /** Log all logs to the combined.log file */
         new winston.transports.File({
-            filename: path.join(logDirectory, 'combined.log') 
+            filename: path.join(logDirectory, 'combined.log'),
+            format: winston.format.combine(
+                winston.format.timestamp(),  // Add timestamp to each log entry
+                winston.format.printf(({ level, message, timestamp }) => {
+                    return JSON.stringify({
+                        date: timestamp,
+                        message: message,
+                        level: level
+                    });
+                })
+            ),
         }),
     ]
 });
@@ -36,7 +63,16 @@ export const logger = winston.createLogger({
 /** Console Logger for Non-Production Environments */
 if (config.NODE_ENV !== 'production') {
     logger.add(new winston.transports.Console({
-        format: winston.format.simple(),  // Simple format for console logs
+        format: winston.format.combine(
+            winston.format.timestamp(),  // Add timestamp to console logs
+            winston.format.printf(({ level, message, timestamp }) => {
+                return JSON.stringify({
+                    date: timestamp,
+                    message: message,
+                    level: level
+                });
+            })
+        ),
     }));
 }
 
