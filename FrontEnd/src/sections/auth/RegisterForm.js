@@ -13,15 +13,13 @@ const RegisterForm = () => {
 
     //validation rules 
     const registerSchema = Yup.object().shape({
-      firstName:Yup.string().required('First Name is required'),
-      lastName:Yup.string().required('Last Name is required'),
+      username:Yup.string().required('UserName is required'),
       email:Yup.string().required('Email is required').email('Email must be a valid email address'),
       password:Yup.string().required('Password is required')
     });
   
     const defaultValues = {
-      firstName:'',
-      lastName:'',
+      username:'',
       email:'ritishup07@gmail.com',
       password:'ritish@123'
     };
@@ -51,10 +49,7 @@ const RegisterForm = () => {
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
         <Stack spacing={3}>
         {!!errors.afterSubmit && <Alert severity='error'>{errors.afterSubmit.message}</Alert>}
-        <Stack direction={{xs:'column', sm:'row'}} spacing={2}>
-            <RHFTextField name="firstName" label='First Name'/>
-            <RHFTextField name="lastName" label='Last Name'/>
-        </Stack>
+        <RHFTextField name="username" label='@Username'/>
         <RHFTextField name='email' label='Email address'/>
         <RHFTextField name='password' label='Password' type={showPassword ? 'text' : 'password'}
         InputProps={{endAdornment:(
