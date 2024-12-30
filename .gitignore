@@ -3,4 +3,6 @@
 /FrontEnd/node_modules
 /BackEnd/.env
 /FrontEnd/.env
-/BackEnd/logs
+/BackEnd/src/logs/combined.log
+/BackEnd/src/logs/access.log
+/BackEnd/src/logs/error.log
