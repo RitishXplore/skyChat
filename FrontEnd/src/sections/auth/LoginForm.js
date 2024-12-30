@@ -1,79 +1,124 @@
-import React , { useState } from 'react';
-import * as Yup from 'yup';
-import { useForm } from 'react-hook-form';
-import FormProvider from '../../components/hook-form/FormProvider'
-import { yupResolver } from '@hookform/resolvers/yup';
-import { Alert, Button, IconButton, InputAdornment, Link, Stack } from '@mui/material';
-import { RHFTextField } from '../../components/hook-form';
-import { Eye, EyeSlash } from 'phosphor-react';
+import { Alert, Button, Link, Stack, TextField, Typography } from '@mui/material'
+import React, { useEffect, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
+import AuthSocial from '../../sections/auth/AuthSocial';
+import LoginForm from '../../sections/auth/LoginForm';
+import { useLoginUserMutation } from '../../sections/auth/services/RegisterForm.slice';
+import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom';
+import * as Yup from 'yup';
+const Login = () => {
 
-const LoginForm = () => {
+  const [loginuser, { isLoading, isError, isSuccess }] = useLoginUserMutation();
+  const [showpassword, setshowpassword] = useState(false);
+  const navigate = useNavigate();
+  const validationSchema = Yup.object({
+    email: Yup.string()
+      .required('Email is required')
+      .email('Invalid email address'),
+    password: Yup.string()
+      .required('Password is required')
+      .min(6, 'Password must be at least 6 characters')
+  })
 
-  const [showPassword, setShowPassword] = useState(false);
 
-  //validation rules 
-  const loginSchema = Yup.object().shape({
-    email:Yup.string().required('Email is required').email('Email must be a valid email address'),
-    password:Yup.string().required('Password is required')
-  });
-
-  const defaultValues = {
-    email:'ritishup07@gmail.com',
-    password:'ritish@123'
-  };
-
-  const methods = useForm({
-    resolver: yupResolver(loginSchema),
-    defaultValues
-  });
-
-  const {reset, setError, handleSubmit, formState:{errors, isSubmitting, isSubmitSuccessful}}
-   = methods;
-
-   const onSubmit = async (data) =>{
-        try {
-            //submit data to backend
-        } catch (error) {
-            console.log(error);
-            reset();
-            setError('afterSubmit',{
-                ...error,
-                message: error.message
-            })
-        }
-   }
-
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: ''
+    },
+    validationSchema,
+    validateOnBlur: false,
+    validateOnChange: false,
+    onSubmit: async (values) => {
+      try {
+        const response = await loginuser(values);
+        console.log('API call successful, response:', response);
+      } catch (error) {
+        console.error('API call failed:', error);
+      }
+    }
+  })
+  useEffect(() => {
+    if (isSuccess) {
+      navigate('/app');
+    }
+  })
   return (
-    <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-        <Stack spacing={3}>
-            {!!errors.afterSubmit && <Alert severity='error'>{errors.afterSubmit.message}</Alert>}
-        
-        <RHFTextField name='email' label='Email address'/>
-        <RHFTextField name='password' label='Password' type={showPassword ? 'text' : 'password'}
-        InputProps={{endAdornment:(
-            <InputAdornment>
-            <IconButton onClick={()=>{
-                setShowPassword(!showPassword);
-            }}>
-                {showPassword ? <Eye/>: <EyeSlash/>}
-            </IconButton>
-            </InputAdornment>
-        )}}/>
+    <form onSubmit={formik.handleSubmit}>
+      <Stack spacing={3}>
+        {Object.keys(formik.errors).length > 0 && (
+          <Alert severity="error">
+            {Object.values(formik.errors).map((error, idx) => {
+              <div key={idx}>{error}</div>
+            })}
+          </Alert>
+        )}
+
+        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+          <TextField
+            name="email"
+            label="Email"
+            fullWidth
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            error={Boolean(formik.errors.email)}
+            helperText={formik.errors.email}
+            sx={{
+              '& .MuiInputBase-root': {
+                backgroundColor: 'transparent',
+              },
+              '& .MuiInputBase-root.Mui-focused': {
+                backgroundColor: 'transparent'
+              },
+              '& .MuiInputBase-root.Mui-error': {
+                borderColor: 'red'
+              },
+            }}
+          />
         </Stack>
-        <Stack alignItems={'flex-end'} sx={{my:2}}>
-            <Link component={RouterLink} to='/auth/reset-password'
-             variant='body2' color='inherit' underline='always'>Forgot Password?</Link>
-        </Stack>
-        <Button fullWidth color='inherit' size='large' type='submit' variant='contained'
-        sx={{bgcolor:'text.primary', color:(theme)=> theme.palette.mode === 'light' ?
-         'common.white':'grey.800',
-         '&:hover':{
-            bgcolor:'text.primary',
-            color:(theme)=> theme.palette.mode === 'light' ? 'common.white':'grey.800',
-         }}}>Login</Button>
-    </FormProvider>
+
+        <TextField
+          name="password"
+          label="Password"
+          value={formik.values.password}
+          onChange={formik.handleChange}
+          error={Boolean(formik.errors.password)}
+          helperText={formik.errors.password}
+          sx={{
+            '& .MuiInputBase-root': {
+              backgroundColor: 'transparent',
+            },
+            '& .MuiInputBase-root.Mui-focused': {
+              backgroundColor: 'transparent'
+            },
+            '& .MuiInputBase-root.Mui-error': {
+              borderColor: 'red'
+            },
+          }}
+        />
+
+        <Button
+          fullWidth
+          color='inherit'
+          size='large'
+          type='submit'
+          variant='contained'
+          sx={{
+            bgcolor: 'text.primary',
+            color: (theme) => (theme.palette.mode === 'light' ? 'common.white' : 'grey.800'),
+            '&:hover': {
+              bgcolor: 'text.primary',
+              color: (theme) => (theme.palette.mode === 'light' ? 'common.white' : 'grey.800'),
+            },
+          }}
+        >
+          Log In
+        </Button>
+
+      </Stack>
+    </form>
   )
 }
 
-export default LoginForm
+export default Login

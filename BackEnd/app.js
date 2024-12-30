@@ -30,6 +30,7 @@ const app = express();
 
 // Middleware: CORS Configuration
 app.use(cors());
+app.use(express.json());
 
 // Middleware: Static Files
 app.use(express.static(path.join(__dirname, "uploads")));
@@ -49,10 +50,13 @@ process.on("unhandledRejection", (error) => {
  */
 (async function initializeApp() {
     try {
+
+         // Route Initialization
+         initRoutes({ app });
+         
         // Middleware Initialization
         initMainMiddlewares({app,express});
-        // Route Initialization
-        initRoutes({ app });
+       
 
         // Database Initialization
         await initMongoDatabase();

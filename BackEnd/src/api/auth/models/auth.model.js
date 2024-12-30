@@ -1,7 +1,10 @@
 import mongoose from 'mongoose';
+import bcrypt from "bcryptjs";
+import dotenv from 'dotenv';
+dotenv.config();
 
 const userSchema = new mongoose.Schema({
-    userName: {
+    username: {
         type: String,
         unique: true,
         required: true,
@@ -90,6 +93,24 @@ const userSchema = new mongoose.Schema({
 }, {
     timestamps: true
 });
+
+userSchema.pre('save' ,async function(next){
+    if(!this.isModified('password')){
+        return next();
+    }
+    try {
+        const hashedpassword = await bcrypt.hash(this.password , parseInt(process.env.SALT_ROUNDS) );
+        console.log('Password hashed:', hashedpassword);
+        this.password = hashedpassword;
+         next();
+    } catch (error) {
+        console.error(error);
+    }
+})
+
+userSchema.methods.comparePassword = async function(password){
+    return bcrypt.compare(password , this.password);
+}
 
 const User = mongoose.model('User', userSchema);
 export default User;

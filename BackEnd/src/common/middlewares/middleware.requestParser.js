@@ -19,8 +19,6 @@ import { corsOption } from '../../config/config.corsOptions.js';
 const initRequestParserMiddlewares = ({ app, express }) => {
   app.use(cors(corsOption));
   app.use(express.urlencoded({ limit: "50mb", extended: true, parameterLimit: 50000 }));
-  app.use(bodyParser.json({ verify: (req, res, buf) => { req.rawBody = buf; }, limit: "50mb" }));
-  app.use(express.json());
 };
 
 export default initRequestParserMiddlewares;

@@ -1,22 +1,22 @@
-//take all the slices that we are creating (combined all the reducers)
 import { combineReducers } from "redux"; 
 import storage from "redux-persist/lib/storage";
-import appReducer from './slices/app'
+import appReducer from './slices/app';
+import { apiSlice } from "../services/apiSlice";
 
-//slices
 
-//create root configuration (how data store and how read out data from store)
+// Root persist configuration
 const rootPersistConfig = {
-    key:'root',
+    key: 'root',
     storage,
-    keyPrefix: 'redux-'
-    // whitelist:[],
-    // blacklist:[]
-}
+    keyPrefix: 'redux-',
+    whitelist: ['app'],   
+    blacklist: ['apiSlice'],  
+};
 
-//create combine reducer
+// Combine reducers
 const rootReducer = combineReducers({
     app: appReducer,
+    [apiSlice.reducerPath]: apiSlice.reducer,  
 });
 
-export {rootPersistConfig, rootReducer}
+export { rootPersistConfig, rootReducer };
