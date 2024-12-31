@@ -20,70 +20,6 @@ const RegisterForm = () => {
       .required('Password is required'),
   })
 
-<<<<<<< Updated upstream
-    //validation rules 
-    const registerSchema = Yup.object().shape({
-      username:Yup.string().required('UserName is required'),
-      email:Yup.string().required('Email is required').email('Email must be a valid email address'),
-      password:Yup.string().required('Password is required')
-    });
-  
-    const defaultValues = {
-      username:'',
-      email:'ritishup07@gmail.com',
-      password:'ritish@123'
-    };
-  
-    const methods = useForm({
-      resolver: yupResolver(registerSchema),
-      defaultValues
-    });
-  
-    const {reset, setError, handleSubmit, formState:{errors, isSubmitting, isSubmitSuccessful}}
-     = methods;
-  
-     const onSubmit = async (data) =>{
-          try {
-              //submit data to backend
-          } catch (error) {
-              console.log(error);
-              reset();
-              setError('afterSubmit',{
-                  ...error,
-                  message: error.message
-              })
-          }
-     }
-
-  return (
-    <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-        <Stack spacing={3}>
-        {!!errors.afterSubmit && <Alert severity='error'>{errors.afterSubmit.message}</Alert>}
-        <RHFTextField name="username" label='@Username'/>
-        <RHFTextField name='email' label='Email address'/>
-        <RHFTextField name='password' label='Password' type={showPassword ? 'text' : 'password'}
-        InputProps={{endAdornment:(
-            <InputAdornment>
-            <IconButton onClick={()=>{
-                setShowPassword(!showPassword);
-            }}>
-                {showPassword ? <Eye/>: <EyeSlash/>}
-            </IconButton>
-            </InputAdornment>
-        )}}/>
-        <Button fullWidth color='inherit' size='large' type='submit' variant='contained'
-        sx={{bgcolor:'text.primary', color:(theme)=> theme.palette.mode === 'light' ?
-         'common.white':'grey.800',
-         '&:hover':{
-            bgcolor:'text.primary',
-            color:(theme)=> theme.palette.mode === 'light' ? 'common.white':'grey.800',
-         }}}>Create Account</Button>
-        </Stack>
-        
-    </FormProvider>
-  )
-}
-=======
   // Formik setup
   const formik = useFormik({
     initialValues: {
@@ -123,7 +59,6 @@ const RegisterForm = () => {
             ))}
           </Alert>
         )}
->>>>>>> Stashed changes
 
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
           <TextField

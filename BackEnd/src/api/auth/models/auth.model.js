@@ -6,7 +6,6 @@ dotenv.config();
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
-        unique: true,
         required: true,
         trim: true
     },
@@ -51,10 +50,12 @@ const userSchema = new mongoose.Schema({
     },
     profilePicture: {
         url: {
-            type: String
+            type: String,
+            default : 'https://static.vecteezy.com/system/resources/previews/022/385/025/non_2x/a-cute-surprised-black-haired-anime-girl-under-the-blooming-sakura-ai-generated-photo.jpg'
         },
         imageName: {
-            type: String
+            type: String,
+            default : 'dummyprofile.jpg'
         }
     },
     status: {
@@ -91,7 +92,8 @@ const userSchema = new mongoose.Schema({
         default: Date.now
     }
 }, {
-    timestamps: true
+    timestamps: true,
+    collection :'User'
 });
 
 userSchema.pre('save' ,async function(next){

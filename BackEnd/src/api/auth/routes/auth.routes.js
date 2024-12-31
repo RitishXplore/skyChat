@@ -4,11 +4,12 @@ app.use(express.json());
 import User from "../models/auth.model.js";
 import mongoose from "mongoose";
 const router = express.Router();
+import jwt from 'jsonwebtoken';
 
 router.get("/", async (req,res)=>{
     //res.status(201).send("auth Api is running...");
     //console.log(User);
-    const userdata = await User.find();
+    const userdata = await User.find() ;
     res.status(201).send(userdata);
 })
 
@@ -35,6 +36,16 @@ router.post('/login', async (req ,res)=>{
     const user = await User.findOne({email : email});
     if(!user && !(await User.compare(password))){
         return res.status(400).json({message : 'Invalid email or password'});
+    }
+    try {
+        const token = jwt.sign({ id: user._id},process.env.JWT_SECRET,{ expiresIn: '1h' });
+        res.cookie('token', token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            maxAge: 60 * 60 * 1000, 
+        });
+    } catch (error) {
+        res.status(400).json({message : error.message}); 
     }
     res.json({message : 'User logged in successfully'});
 })
