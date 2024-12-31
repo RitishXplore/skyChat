@@ -10,7 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);  // Get the current directory of the logger file
 
 // Resolve the BackEnd root directory (this will always point to the BackEnd folder)
-const backEndRoot = path.resolve(__dirname, '../../'); // Moving 2 levels up to BackEnd directory
+const backEndRoot = path.resolve(__dirname, '../../../'); // Moving 2 levels up to BackEnd directory
 const logDirectory = path.join(backEndRoot, 'logs'); // Logs directory in the BackEnd folder
 
 console.log('Log directory is set to:', logDirectory); // For debugging: ensure it's pointing to the correct directory

@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 const publicDirectoryPath = path.join(__dirname, "../../public");
 
 // Create a write stream for access log in append mode
-let accessLogStream = fs.createWriteStream(path.join(__dirname, "../../logs/access.log"), { flags: "a" });
+let accessLogStream = fs.createWriteStream(path.join(__dirname, "../../../logs/access.log"), { flags: "a" });
 
 /**
  * @description - Initializes middleware for logging and error handling
