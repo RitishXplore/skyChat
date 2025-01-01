@@ -8,7 +8,8 @@ import {
     getMessagesInChat,
     reactToMessage,
     markMessagesAsRead,
-    getChatListForUser
+    getChatListForUser,
+    getConversation
 } from '../controllers/chat.controller.js';
 
 const router = express.Router();
@@ -17,6 +18,7 @@ const router = express.Router();
 router.post('/', startChat);
 router.get('/:userId', getChatsForUser);
 router.get('/list/:userId',getChatListForUser);
+router.get('/conversation/:chatId',getConversation)
 
 // Message Routes
 router.post('/messages', sendMessage);

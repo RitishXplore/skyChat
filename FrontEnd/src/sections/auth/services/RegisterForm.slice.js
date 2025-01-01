@@ -55,6 +55,14 @@ export const registerform = apiSlice.injectEndpoints({
         }
       },
     }),
+    
+    getConversation: builder.query({
+      query: ({ userId }) => ({
+        url: `/v1/chats/conversation/67758280c9a8eb8ef276a885?userId=${userId}`, // Include userId as a query parameter
+        method: 'GET',
+      }),
+    }),
+    
 
     // New Search Users API
     SearchUsers: builder.query({
@@ -63,6 +71,7 @@ export const registerform = apiSlice.injectEndpoints({
         method: "GET",
       }),
     }),
+    
   }),
   overrideExisting: false,
 });
@@ -71,5 +80,6 @@ export const {
   useGetUsersQuery,
   useRegisterUserMutation,
   useLoginUserMutation,
-  useSearchUsersQuery, // Export search users query hook
+  useSearchUsersQuery,
+  useGetConversationQuery, // Export search users query hook
 } = registerform;

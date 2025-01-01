@@ -66,7 +66,7 @@ export const getChatListForUser = async (req, res) => {
     const { userId } = req.params;
 
     try {
-        // Find all chats involving the user
+        // Find all chats involving the user and sort by the last message timestamp in descending order
         const chats = await Chat.find({ participants: userId })
             .populate({
                 path: 'participants',
@@ -78,7 +78,8 @@ export const getChatListForUser = async (req, res) => {
                     path: 'sender',
                     select: 'name profilePicture',
                 },
-            });
+            })
+            .sort({ 'lastMessage.createdAt': -1 }); // Sort by the last message's creation time in descending order
 
         // Transform the data to create the user list
         const chatList = chats.map(chat => {
@@ -107,6 +108,7 @@ export const getChatListForUser = async (req, res) => {
         res.status(500).json({ message: 'Failed to fetch chat list', error: error.message });
     }
 };
+
 
 
 // Get all messages in a chat
@@ -156,5 +158,38 @@ export const markMessagesAsRead = async (req, res) => {
         res.status(200).json({ message: 'Messages marked as read' });
     } catch (error) {
         res.status(500).json({ message: 'Failed to mark messages as read', error: error.message });
+    }
+};
+// **Controller File (controllers/chatController.js)**
+export const getConversation = async (req, res) => {
+    const { chatId } = req.params;
+    const { userId } = req.query; // Get userId from query parameters
+
+    try {
+        const chat = await Chat.findById(chatId);
+        if (!chat) {
+            return res.status(404).json({ message: 'Chat not found' });
+        }
+
+        const messages = await Message.find({ chatId }).sort({ createdAt: 1 });
+        const transformedMessages = messages.map(message => {
+            const isSender = message.sender.toString() === userId;
+
+            return {
+                message: message.content,
+                type: 'msg',
+                outgoing: isSender,
+                incoming: !isSender,
+                timestamp: message.createdAt,
+                isSender,
+            };
+        });
+
+        res.status(200).json({
+            chatId: chat._id,
+            messages: transformedMessages,
+        });
+    } catch (error) {
+        res.status(500).json({ message: 'Failed to fetch conversation', error: error.message });
     }
 };

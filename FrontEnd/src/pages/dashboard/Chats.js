@@ -33,9 +33,10 @@ const Chats = () => {
   const mappedUsers = users.map(user => {
     return {
       id: user.userId,
-      name: user.username,
+      username: user.username,
       img: user.profilePicture.url? user.profilePicture.url: user.profilePicture,
-      // msg : user.lastMessage.content
+      // msg : user.lastMessage,
+      online: user.status
     }
   })
   console.log(mappedUsers,usersData);

@@ -3,7 +3,8 @@ import React from 'react';
 import {Chat_History} from '../../data'
 import { DocMsg, LinkMsg, MediaMsg, ReplyMsg, TextMsg, TimeLine } from './MsgTypes';
 
-const Message = ({menu}) => {
+const Message = ({menu ,Chat_History}) => {
+  console.log(Chat_History);
   return (
     <Box p={3}>
         <Stack spacing={3}>
