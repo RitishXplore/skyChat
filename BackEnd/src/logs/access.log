@@ -1,0 +1,604 @@
+{"date":"2024-12-30 12:16:24","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-30 12:16:24","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-30 12:16:24","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-30 12:16:30","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-30 12:16:30","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-30 12:16:30","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 10:27:48","message":"MongoDB connection error: MongoParseError: Invalid scheme, expected connection string to start with \"mongodb://\" or \"mongodb+srv://\"","level":"error"}
+{"date":"2024-12-31 10:27:48","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 10:27:48","message":"MongoDB connection error: Invalid scheme, expected connection string to start with \"mongodb://\" or \"mongodb+srv://\"","level":"error"}
+{"date":"2024-12-31 10:37:39","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 10:37:39","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 10:37:39","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:09:39","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:09:39","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:09:39","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:09:43","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:09:43","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:09:43","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:09:47","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:09:47","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:09:47","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:09:56","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:09:56","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:09:56","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:10:17","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:10:17","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:10:17","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:10:44","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:10:44","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:10:44","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:10:47","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:10:47","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:10:47","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:10:51","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:10:51","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:10:51","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:10:53","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:10:53","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:10:53","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:10:55","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:10:55","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:10:55","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:10:58","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:10:58","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:10:58","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:11:01","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:11:01","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:11:01","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:11:05","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:11:05","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:11:05","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:11:06","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:11:06","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:11:06","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:11:08","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:11:08","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:11:08","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:11:10","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:11:10","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:11:10","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:11:13","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:11:14","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:11:14","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:11:15","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:11:15","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:11:15","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:11:18","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:11:18","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:11:18","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:11:21","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:11:21","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:11:21","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:11:24","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:11:24","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:11:24","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:11:29","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:11:29","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:11:29","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:11:36","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:11:40","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:11:40","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:11:40","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:11:41","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:11:41","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:11:41","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:11:44","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:11:44","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:11:44","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:11:49","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:11:49","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:11:49","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:11:53","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:11:53","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:11:53","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:11:55","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:11:55","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:11:55","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:12:37","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:12:37","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:12:37","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:12:39","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:12:39","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:12:39","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:12:42","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:12:42","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:12:42","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:13:04","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:13:04","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:13:04","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:13:18","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:13:18","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:13:18","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:19:03","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:19:03","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:19:03","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:19:35","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:19:35","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:19:35","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:19:51","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:19:51","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:19:51","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:36:49","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:36:49","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:36:49","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 11:39:51","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 11:39:51","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 11:39:51","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:06:59","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:06:59","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:06:59","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:07:05","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:07:05","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:07:05","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:07:08","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:07:08","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:07:08","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:07:12","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:07:12","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:07:12","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:07:18","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:07:18","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:07:18","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:07:21","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:07:21","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:07:21","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:07:25","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:07:25","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:07:25","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:07:43","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:07:43","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:07:43","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:09:49","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:09:49","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:09:49","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:11:45","message":"Unhandled Rejection: User.compare is not a function","level":"error"}
+{"date":"2024-12-31 12:11:54","message":"Unhandled Rejection: User.compare is not a function","level":"error"}
+{"date":"2024-12-31 12:13:28","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:13:29","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:13:29","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:13:44","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:13:45","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:13:45","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:13:58","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:13:58","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:13:58","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:14:08","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:14:08","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:14:08","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:14:32","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:14:33","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:14:33","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:14:39","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:14:40","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:14:40","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:14:42","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:14:42","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:14:42","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:14:43","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:14:44","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:14:44","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:14:44","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:14:49","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:14:49","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:14:49","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:14:51","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:14:52","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:14:53","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:14:53","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:17:16","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:17:16","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:17:16","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:17:18","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:17:18","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:17:18","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:18:19","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:18:20","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:18:20","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:18:20","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:18:24","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:18:24","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:18:24","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:18:25","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:18:26","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:18:26","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:18:46","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:18:46","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:18:46","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:18:50","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:18:50","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:18:50","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:19:04","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:19:05","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:19:05","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:19:31","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:19:32","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:19:32","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:19:45","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:19:45","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:19:45","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:19:55","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:19:55","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:19:55","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:20:48","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:20:49","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:20:49","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:21:07","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:21:07","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:21:09","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:21:09","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:27:19","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:27:20","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:27:20","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:27:21","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:27:21","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:27:21","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:27:26","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:27:26","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:27:26","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:27:33","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:27:34","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:27:34","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:27:34","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:27:35","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:27:35","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:27:40","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:27:42","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:27:43","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:27:43","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:27:43","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:27:46","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:27:47","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:27:47","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:27:48","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:27:49","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:27:49","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:29:27","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:29:28","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:29:28","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:29:29","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:29:30","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:29:30","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:29:36","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:29:36","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:29:36","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 12:30:19","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 12:30:20","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 12:30:20","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 13:08:36","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 13:08:36","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 13:08:36","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 13:08:42","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 13:08:43","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 13:08:43","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 13:08:53","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 13:08:54","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 13:08:54","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 13:09:00","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 13:09:01","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 13:09:01","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 13:09:02","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 13:09:03","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 13:09:03","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 13:09:15","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 13:09:15","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 13:09:15","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 13:09:17","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 13:09:18","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 13:09:18","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 13:09:23","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 13:09:24","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 13:09:25","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 13:09:25","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 13:09:37","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 13:09:38","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 13:09:38","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 13:16:02","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 13:16:03","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 13:16:03","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 13:16:04","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 13:16:05","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 13:16:06","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 13:16:06","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 13:16:11","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 13:16:11","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 13:16:11","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 13:16:14","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 13:16:14","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 13:16:14","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 13:19:51","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 13:19:52","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 13:19:52","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:27:29","message":"Unhandled Rejection: User.compare is not a function","level":"error"}
+{"date":"2024-12-31 14:27:54","message":"Unhandled Rejection: User.compare is not a function","level":"error"}
+{"date":"2024-12-31 14:28:18","message":"Unhandled Rejection: User.compare is not a function","level":"error"}
+{"date":"2024-12-31 14:28:28","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:28:29","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:28:29","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:28:29","message":"Unhandled Rejection: User.compare is not a function","level":"error"}
+{"date":"2024-12-31 14:29:10","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:29:10","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:29:10","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:30:38","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:30:39","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:30:39","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:31:18","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:31:19","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:31:19","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:31:24","message":"Unhandled Rejection: User.compare is not a function","level":"error"}
+{"date":"2024-12-31 14:33:17","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:33:18","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:33:18","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:33:22","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:33:23","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:33:23","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:33:34","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:33:34","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:33:34","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:34:01","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:34:01","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:34:01","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:34:05","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:34:06","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:34:06","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:34:10","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:34:11","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:34:12","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:34:12","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:34:13","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:34:13","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:34:13","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:34:14","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:34:15","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:34:15","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:34:15","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:34:16","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:34:16","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:34:18","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:34:18","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:34:18","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:34:40","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:34:40","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:34:40","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:34:42","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:34:43","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:34:43","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:35:12","message":"Unhandled Rejection: user.comparePassword is not a function","level":"error"}
+{"date":"2024-12-31 14:35:32","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:35:33","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:35:33","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:35:40","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:35:41","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:35:41","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:38:52","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:38:52","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:38:52","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:38:55","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:38:56","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:38:56","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:38:58","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:38:59","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:38:59","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:41:00","message":"Unhandled Rejection: User.compare is not a function","level":"error"}
+{"date":"2024-12-31 14:45:14","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:45:16","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:45:17","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:45:17","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:52:26","message":"Unhandled Rejection: User.compare is not a function","level":"error"}
+{"date":"2024-12-31 14:57:04","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:57:05","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:57:05","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:57:08","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 14:57:08","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 14:57:08","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 14:57:19","message":"Unhandled Rejection: ObjectId is not defined","level":"error"}
+{"date":"2024-12-31 14:57:53","message":"Unhandled Rejection: ObjectId is not defined","level":"error"}
+{"date":"2024-12-31 15:00:02","message":"Unhandled Rejection: ObjectId is not defined","level":"error"}
+{"date":"2024-12-31 15:00:13","message":"Unhandled Rejection: ObjectId is not defined","level":"error"}
+{"date":"2024-12-31 15:00:22","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:00:23","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:00:23","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:01:35","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:01:36","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:01:37","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:01:37","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:01:53","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:01:54","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:01:54","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:02:57","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:02:58","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:02:58","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:03:00","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:03:01","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:03:01","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:03:02","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:03:03","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:03:03","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:04:00","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:04:01","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:04:01","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:05:40","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:05:41","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:05:41","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:05:42","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:05:42","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:05:42","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:05:49","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:05:50","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:05:50","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:05:54","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:05:54","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:05:54","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:06:01","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:06:02","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:06:02","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:06:16","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:06:16","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:06:16","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:06:25","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:06:25","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:06:25","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:06:43","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:06:44","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:06:44","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:06:45","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:06:46","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:06:46","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:06:55","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:06:56","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:06:56","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:07:52","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:07:53","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:07:53","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:08:01","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:08:02","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:08:02","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:29:37","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:29:37","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:29:37","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:30:18","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:30:19","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:30:19","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:30:22","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:30:22","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:30:22","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:30:29","message":"Unhandled Rejection: User.comparePassword is not a function","level":"error"}
+{"date":"2024-12-31 15:31:13","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:31:14","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:31:14","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:32:35","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:32:36","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:32:36","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:32:52","message":"Unhandled Rejection: Cannot read properties of null (reading 'comparePassword')","level":"error"}
+{"date":"2024-12-31 15:35:16","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:35:16","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:35:16","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 15:38:04","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 15:38:05","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 15:38:05","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 16:46:49","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 16:46:49","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 16:46:49","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 16:52:40","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 16:52:40","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 16:52:40","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 16:52:41","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 16:52:42","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 16:52:42","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 16:52:48","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 16:52:49","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 16:52:49","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 16:52:50","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 16:52:51","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 16:52:51","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 16:52:53","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 16:52:54","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 16:52:54","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 16:52:56","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 16:52:56","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 16:52:56","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 16:55:13","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 16:55:14","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 16:55:14","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 16:56:47","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 16:56:47","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 16:56:47","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 16:59:14","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 16:59:15","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 16:59:15","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 16:59:21","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 16:59:22","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 16:59:22","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 16:59:55","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 16:59:56","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 16:59:56","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 16:59:59","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:00:00","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:00:00","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:00:11","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:00:12","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:00:12","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:00:19","message":"Unhandled Rejection: User.find is not a function","level":"error"}
+{"date":"2024-12-31 17:01:16","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:01:17","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:01:18","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:01:18","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:01:18","message":"Unhandled Rejection: User.find is not a function","level":"error"}
+{"date":"2024-12-31 17:01:21","message":"Unhandled Rejection: User.find is not a function","level":"error"}
+{"date":"2024-12-31 17:01:28","message":"Unhandled Rejection: User.find is not a function","level":"error"}
+{"date":"2024-12-31 17:01:28","message":"Unhandled Rejection: User.find is not a function","level":"error"}
+{"date":"2024-12-31 17:05:40","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:05:41","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:05:41","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:06:27","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:06:27","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:06:27","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:06:33","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:06:33","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:06:33","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:07:02","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:07:03","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:07:03","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:07:17","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:07:17","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:07:17","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:07:19","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:07:20","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:07:20","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:07:24","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:07:25","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:07:25","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:07:32","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:07:32","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:07:32","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:11:14","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:11:14","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:11:14","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:11:27","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:11:27","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:11:27","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:11:30","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:11:31","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:11:31","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:11:33","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:11:33","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:11:33","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:11:59","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:11:59","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:11:59","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:14:55","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:14:56","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:14:56","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:14:59","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:14:59","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:14:59","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:15:27","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:15:27","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:15:27","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:16:17","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:16:18","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:16:18","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:18:32","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:18:33","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:18:33","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:20:01","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:20:02","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:20:02","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:20:04","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:20:05","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:20:05","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:22:33","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:22:33","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:22:33","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:22:38","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:22:38","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:22:38","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:22:49","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:22:52","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:22:52","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:23:03","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:23:04","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:23:04","message":"MongoDB connected successfully","level":"info"}
+{"date":"2024-12-31 17:23:05","message":"✅ Application initialized successfully.","level":"info"}
+{"date":"2024-12-31 17:23:06","message":"MongoDB connection established","level":"info"}
+{"date":"2024-12-31 17:23:06","message":"MongoDB connected successfully","level":"info"}

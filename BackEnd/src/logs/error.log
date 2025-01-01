@@ -1,0 +1,23 @@
+{"date":"2024-12-31 10:27:48","message":"MongoDB connection error: MongoParseError: Invalid scheme, expected connection string to start with \"mongodb://\" or \"mongodb+srv://\"","level":"error"}
+{"date":"2024-12-31 10:27:48","message":"MongoDB connection error: Invalid scheme, expected connection string to start with \"mongodb://\" or \"mongodb+srv://\"","level":"error"}
+{"date":"2024-12-31 12:11:45","message":"Unhandled Rejection: User.compare is not a function","level":"error"}
+{"date":"2024-12-31 12:11:54","message":"Unhandled Rejection: User.compare is not a function","level":"error"}
+{"date":"2024-12-31 14:27:29","message":"Unhandled Rejection: User.compare is not a function","level":"error"}
+{"date":"2024-12-31 14:27:54","message":"Unhandled Rejection: User.compare is not a function","level":"error"}
+{"date":"2024-12-31 14:28:18","message":"Unhandled Rejection: User.compare is not a function","level":"error"}
+{"date":"2024-12-31 14:28:29","message":"Unhandled Rejection: User.compare is not a function","level":"error"}
+{"date":"2024-12-31 14:31:24","message":"Unhandled Rejection: User.compare is not a function","level":"error"}
+{"date":"2024-12-31 14:35:12","message":"Unhandled Rejection: user.comparePassword is not a function","level":"error"}
+{"date":"2024-12-31 14:41:00","message":"Unhandled Rejection: User.compare is not a function","level":"error"}
+{"date":"2024-12-31 14:52:26","message":"Unhandled Rejection: User.compare is not a function","level":"error"}
+{"date":"2024-12-31 14:57:19","message":"Unhandled Rejection: ObjectId is not defined","level":"error"}
+{"date":"2024-12-31 14:57:53","message":"Unhandled Rejection: ObjectId is not defined","level":"error"}
+{"date":"2024-12-31 15:00:02","message":"Unhandled Rejection: ObjectId is not defined","level":"error"}
+{"date":"2024-12-31 15:00:13","message":"Unhandled Rejection: ObjectId is not defined","level":"error"}
+{"date":"2024-12-31 15:30:29","message":"Unhandled Rejection: User.comparePassword is not a function","level":"error"}
+{"date":"2024-12-31 15:32:52","message":"Unhandled Rejection: Cannot read properties of null (reading 'comparePassword')","level":"error"}
+{"date":"2024-12-31 17:00:19","message":"Unhandled Rejection: User.find is not a function","level":"error"}
+{"date":"2024-12-31 17:01:18","message":"Unhandled Rejection: User.find is not a function","level":"error"}
+{"date":"2024-12-31 17:01:21","message":"Unhandled Rejection: User.find is not a function","level":"error"}
+{"date":"2024-12-31 17:01:28","message":"Unhandled Rejection: User.find is not a function","level":"error"}
+{"date":"2024-12-31 17:01:28","message":"Unhandled Rejection: User.find is not a function","level":"error"}
