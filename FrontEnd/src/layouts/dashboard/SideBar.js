@@ -8,7 +8,7 @@ import { faker } from '@faker-js/faker';
 import AntSwitch from '../../components/AntSwitch';
 import Logo from '../../assets/Images/logo.ico';
 import { useNavigate } from 'react-router-dom';
-
+import Cookies from "js-cookie"; 
 const getPath = (index) =>{
   switch (index) {
     case 0:
@@ -56,6 +56,12 @@ const SideBar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  // Handle Logout function
+const handleLogout = () => {
+  Cookies.remove("token"); // Remove the token from cookies
+  navigate("/auth/login"); // Redirect to login page after logout
+};
+
 
     const theme = useTheme();
     const navigate = useNavigate();
@@ -131,19 +137,37 @@ const SideBar = () => {
               anchorOrigin={{vertical:'bottom', horizontal:'right'}}
               transformOrigin={{vertical:'bottom', horizontal:'left'}}
             >
-            <Stack spacing={1} px={1}>
-              {Profile_Menu.map((el, idx)=>(
-                  <MenuItem onClick={ ()=> {handleClick(); } }>
-                    <Stack onClick={()=>{
-                      navigate(getMenuPath(idx))
-                    }} sx={{width:100}} direction='row' alignItems={'center'}
-                     justifyContent='space-between'>
-                      <span>{el.title}</span>
-                      {el.icon}
-                    </Stack>  
-                  </MenuItem>
-              ))}
-            </Stack>
+
+<Stack spacing={1} px={1}>
+  {Profile_Menu.map((el, idx) => (
+    <MenuItem
+      onClick={() => {
+        if (el.title === "Logout") {
+          handleLogout(); // If Logout is clicked, handle logout
+        } else {
+          handleClick();
+        }
+      }}
+    >
+      <Stack
+        onClick={() => {
+          if (el.title !== "Logout") {
+            navigate(getMenuPath(idx)); // Navigate only if not logout
+          }
+        }}
+        sx={{ width: 100 }}
+        direction="row"
+        alignItems={"center"}
+        justifyContent="space-between"
+      >
+        <span>{el.title}</span>
+        {el.icon}
+      </Stack>
+    </MenuItem>
+  ))}
+</Stack>
+
+
           </Menu>
           </Stack>   
         </Stack>

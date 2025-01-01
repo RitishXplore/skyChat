@@ -1,5 +1,5 @@
 import { apiSlice } from "../../../services/apiSlice";
-
+import Cookies from "js-cookie"; // Import js-cookie to manage cookies
 
 export const registerform = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
@@ -13,26 +13,63 @@ export const registerform = apiSlice.injectEndpoints({
     RegisterUser: builder.mutation({
       query: (user) => ({
         url: `/v1/auth/signup`,
-        method: 'POST',
+        method: "POST",
         body: user,
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       }),
     }),
 
-    LoginUser : builder.mutation({
-      query : (user)=>({
-        url : `v1/auth/login`,
-        method : 'POST',
-        body : user,
-        headers : {
-          'Content-Type' : 'application/json'
+    LoginUser: builder.mutation({
+      query: (user) => ({
+        url: `v1/auth/login`,
+        method: "POST",
+        body: user,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }),
+      async onQueryStarted(arg, { queryFulfilled }) {
+        try {
+          const { data } = await queryFulfilled; // Get the response data
+          const { token, userId } = data;
+
+          if (token) {
+            Cookies.set("token", token, {
+              expires: 1, // Cookie will expire in 1 day
+              secure: process.env.NODE_ENV === "production", // Secure flag in production
+              httpOnly: false, // Client-side accessible
+            });
+          }
+
+          if (userId) {
+            Cookies.set("userId", userId, {
+              expires: 1, // Same expiry as token
+              secure: process.env.NODE_ENV === "production",
+              httpOnly: false,
+            });
+          }
+        } catch (error) {
+          console.error("Login failed", error);
         }
-      })
-    })
+      },
+    }),
+
+    // New Search Users API
+    SearchUsers: builder.query({
+      query: (searchQuery) => ({
+        url: `/v1/auth/search?query=${searchQuery}`,
+        method: "GET",
+      }),
+    }),
   }),
   overrideExisting: false,
 });
 
-export const { useGetUsersQuery, useRegisterUserMutation , useLoginUserMutation } = registerform;
+export const {
+  useGetUsersQuery,
+  useRegisterUserMutation,
+  useLoginUserMutation,
+  useSearchUsersQuery, // Export search users query hook
+} = registerform;

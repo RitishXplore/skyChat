@@ -1,6 +1,6 @@
-import { Box, IconButton, Stack, Typography, InputBase, Button, Divider, Avatar, Badge } from
+import { Box, IconButton, Stack, Typography, InputBase, Link,Button, Divider, Avatar, Badge } from
   '@mui/material'
-import { ArchiveBox, CircleDashed, MagnifyingGlass } from 'phosphor-react';
+import { ArchiveBox, CircleDashed, MagnifyingGlass ,Plus} from 'phosphor-react';
 import { useTheme } from '@mui/material/styles';
 import React, { useEffect, useState } from 'react';
 import { faker } from '@faker-js/faker';
@@ -9,12 +9,18 @@ import { Search, SearchIconWrapper, StyledInputBase } from '../../components/Sea
 import ChatElement from '../../components/ChatElement';
 import { useGetUsersQuery } from '../../sections/auth/services/RegisterForm.slice';
 import { useFormik } from 'formik';
+import StartCall from '../../sections/main/StartCall';
+import StartChat from '../../sections/main/StartChat';
 
 const Chats = () => {
   const theme = useTheme();
   const { data: usersData } = useGetUsersQuery();
   const [users, setusers] = useState([]);
+  const [openDialog, setOpenDialog] = useState(false);
 
+  const handleCloseDialog = () =>{
+      setOpenDialog(false);
+    }
   useEffect(() => {
     if (usersData) {
       setusers(usersData);
@@ -57,7 +63,14 @@ const Chats = () => {
             <StyledInputBase placeholder='Search...' inputProps={{ "aria-label": "search" }} />
           </Search>
         </Stack>
-
+        <Stack direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
+                    <Typography variant='subtitle2' component={Link}>Start Conversation</Typography>
+                    <IconButton onClick={() =>{
+                       setOpenDialog(true)
+                        }}>
+                        <Plus style={{color: theme.palette.primary.main}}/>
+                    </IconButton>
+                </Stack>
         <Stack spacing={1}>
           <Stack direction='row' alignItems='center' spacing={1.5}>
             <ArchiveBox size={24} />
@@ -100,9 +113,11 @@ const Chats = () => {
 
         </Stack>
       </Stack>
-
+      { openDialog && <StartChat open={openDialog} handleClose={handleCloseDialog}/>}
     </Box>
+    
   )
+  
 }
 
 export default Chats

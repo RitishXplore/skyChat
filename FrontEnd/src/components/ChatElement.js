@@ -2,12 +2,27 @@ import { Avatar, Badge, Box, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import StyledBadge from './StyledBadge';
 
-// single chat element
-const ChatElement = ({ id, name, img, msg, time, online, unread }) => {
+const ChatElement = ({ id, username, profilePicture, msg, time, online, unread }) => {
   const theme = useTheme();
+
+  // Check if profilePicture is an SVG and process accordingly
+  const isSvg = profilePicture && profilePicture.endsWith('.svg');
   
-  // Check if img is an SVG
-  const isSvg = img && img.endsWith('.svg');
+  // Function to safely handle SVG embedding (only if you control the SVG content)
+  const renderAvatar = () => {
+    if (isSvg) {
+      return (
+        <Avatar>
+          {/* Inline rendering of SVG content */}
+          <div
+            style={{ width: '100%', height: '100%' }}
+            dangerouslySetInnerHTML={{ __html: profilePicture }}
+          />
+        </Avatar>
+      );
+    }
+    return <Avatar src={profilePicture} />;
+  };
 
   return (
     <Box
@@ -27,32 +42,25 @@ const ChatElement = ({ id, name, img, msg, time, online, unread }) => {
               anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
               variant="dot"
             >
-              {isSvg ? (
-                <Avatar>
-                  {/* Inline rendering of SVG content */}
-                  <div
-                    style={{ width: '100%', height: '100%' }}
-                    dangerouslySetInnerHTML={{ __html: img }}
-                  />
-                </Avatar>
-              ) : (
-                <Avatar src={img} />
-              )}
+              {renderAvatar()}
             </StyledBadge>
           ) : (
-            <Avatar src={img} />
+            renderAvatar()
           )}
 
           <Stack spacing={0.3}>
-            <Typography variant="subtitle2">{name}</Typography>
+            <Typography variant="subtitle2">{username}</Typography>
             <Typography variant="caption">{msg}</Typography>
           </Stack>
         </Stack>
+
         <Stack spacing={2} alignItems="center">
           <Typography sx={{ fontWeight: 600 }} variant="caption">
             {time}
           </Typography>
-          <Badge color="primary" badgeContent={unread}></Badge>
+          {unread > 0 && (
+            <Badge color="primary" badgeContent={unread} />
+          )}
         </Stack>
       </Stack>
     </Box>
