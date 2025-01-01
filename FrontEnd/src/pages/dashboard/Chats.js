@@ -29,6 +29,7 @@ const Chats = () => {
       id: user._id,
       name: user.username,
       img: user.profilePicture.url? user.profilePicture.url: user.profilePicture,
+      msg : user.lastMessage.content
     }
   })
 

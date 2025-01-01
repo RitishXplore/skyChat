@@ -5,7 +5,7 @@ export const registerform = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     GetUsers: builder.query({
       query: () => ({
-        url: `/v1/auth/`,
+        url: `/v1/auth/getquery`,
         method: "GET",
       }),
     }),
