@@ -2,11 +2,11 @@ import { Avatar, Badge, Box, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import StyledBadge from './StyledBadge';
 
-const ChatElement = ({ id, username, profilePicture, msg, time, online, unread }) => {
+const ChatElement = ({ userId, name, img, msg, time, online, unread }) => {
   const theme = useTheme();
 
-  // Check if profilePicture is an SVG and process accordingly
-  const isSvg = profilePicture && profilePicture.endsWith('.svg');
+  // Check if img is an SVG and process accordingly
+  const isSvg = img && img.endsWith('.svg');
   
   // Function to safely handle SVG embedding (only if you control the SVG content)
   const renderAvatar = () => {
@@ -16,12 +16,12 @@ const ChatElement = ({ id, username, profilePicture, msg, time, online, unread }
           {/* Inline rendering of SVG content */}
           <div
             style={{ width: '100%', height: '100%' }}
-            dangerouslySetInnerHTML={{ __html: profilePicture }}
+            dangerouslySetInnerHTML={{ __html: img }}
           />
         </Avatar>
       );
     }
-    return <Avatar src={profilePicture} />;
+    return <Avatar src={img} />;
   };
 
   return (
@@ -49,7 +49,7 @@ const ChatElement = ({ id, username, profilePicture, msg, time, online, unread }
           )}
 
           <Stack spacing={0.3}>
-            <Typography variant="subtitle2">{username}</Typography>
+            <Typography variant="subtitle2">{name}</Typography>
             <Typography variant="caption">{msg}</Typography>
           </Stack>
         </Stack>

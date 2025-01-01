@@ -97,72 +97,6 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.index({ username: 'text', email: 'text' });
-// **Chat Schema**
-const chatSchema = new mongoose.Schema({
-    participants: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    }],
-    isGroupChat: {
-        type: Boolean,
-        default: false
-    },
-    groupId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Group'
-    },
-    lastMessage: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Message'
-    }
-}, {
-    timestamps: true,
-    collection: 'Chat'
-});
-
-// **Message Schema**
-const messageSchema = new mongoose.Schema({
-    chatId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Chat'
-    },
-    sender: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    },
-    content: {
-        type: String
-    },
-    media: {
-        type: String
-    },
-    status: {
-        type: String,
-        enum: ['sent', 'delivered', 'read']
-    },
-    reactions: [{
-        userId: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User'
-        },
-        reaction: {
-            type: String
-        }
-    }],
-    isEncrypted: {
-        type: Boolean,
-        default: false
-    },
-    encryptionKey: {
-        type: String
-    },
-    decryptionKey: {
-        type: String
-    }
-}, {
-    timestamps: true,
-    collection: 'Message'
-});
 
 // **Group Schema**
 const groupSchema = new mongoose.Schema({
@@ -515,8 +449,6 @@ const permissionSchema = new mongoose.Schema({
 
 // Export all models
 const User = mongoose.model('User', userSchema);
-const Chat = mongoose.model('Chat', chatSchema);
-const Message = mongoose.model('Message', messageSchema);
 const Group = mongoose.model('Group', groupSchema);
 const Call = mongoose.model('Call', callSchema);
 const Media = mongoose.model('Media', mediaSchema);
@@ -534,20 +466,18 @@ const Permissions = mongoose.model('Permissions', permissionSchema);
 
 export {
     User,
-    Chat,
-    Message,
-    Group,
-    Call,
-    Media,
-    Reaction,
-    PinnedMessages,
-    ArchivedMessages,
-    DeletedMessages,
-    Encryption,
-    Presence,
-    GroupLogs,
-    UserLogs,
-    Reports,
-    Polls,
-    Permissions
+    // Group,
+    // Call,
+    // Media,
+    // Reaction,
+    // PinnedMessages,
+    // ArchivedMessages,
+    // DeletedMessages,
+    // Encryption,
+    // Presence,
+    // GroupLogs,
+    // UserLogs,
+    // Reports,
+    // Polls,
+    // Permissions
 };

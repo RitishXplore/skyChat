@@ -1,6 +1,7 @@
 import express from "express";
 import adminAuthRoutes from "./admin/admin.routes.js"
 import authRoutes from "./auth/routes/auth.routes.js"
+import chatsRoutes from "./chat/routes/chat.routes.js"
 const router = express.Router();
 const routes =[
     {
@@ -12,6 +13,11 @@ const routes =[
         method :"use",
         url:"/auth",
         handler: authRoutes
+    },
+    {
+        method :"use",
+        url:"/chats",
+        handler: chatsRoutes
     }
 ]
 

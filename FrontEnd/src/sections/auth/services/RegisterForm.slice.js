@@ -4,8 +4,8 @@ import Cookies from "js-cookie"; // Import js-cookie to manage cookies
 export const registerform = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     GetUsers: builder.query({
-      query: () => ({
-        url: `/v1/auth/getquery`,
+      query: (userId) => ({
+        url: `/v1/chats/list/${userId}`,
         method: "GET",
       }),
     }),

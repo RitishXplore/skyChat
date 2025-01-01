@@ -11,10 +11,10 @@ import { useGetUsersQuery } from '../../sections/auth/services/RegisterForm.slic
 import { useFormik } from 'formik';
 import StartCall from '../../sections/main/StartCall';
 import StartChat from '../../sections/main/StartChat';
-
+import Cookies from "js-cookie"; // Cookie management for checking if the user is logged in
 const Chats = () => {
   const theme = useTheme();
-  const { data: usersData } = useGetUsersQuery();
+  const { data: usersData } = useGetUsersQuery(Cookies.get("userId"));
   const [users, setusers] = useState([]);
   const [openDialog, setOpenDialog] = useState(false);
 
@@ -32,12 +32,13 @@ const Chats = () => {
 
   const mappedUsers = users.map(user => {
     return {
-      id: user._id,
+      id: user.userId,
       name: user.username,
       img: user.profilePicture.url? user.profilePicture.url: user.profilePicture,
-      msg : user.lastMessage.content
+      // msg : user.lastMessage.content
     }
   })
+  console.log(mappedUsers,usersData);
 
   return (
     <Box sx={{
