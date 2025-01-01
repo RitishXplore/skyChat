@@ -14,6 +14,7 @@ router.get("/", async (req,res)=>{
 })
 
 
+
 //signup
 router.post('/signup', async (req,res)=>{
     const { username , email , password } = req.body;
