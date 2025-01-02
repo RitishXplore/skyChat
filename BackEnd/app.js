@@ -16,7 +16,7 @@ import { dirname } from "path";
 import { initRoutes } from "./src/common/loaders/loader.routes.init.js";
 import { initMongoDatabase } from "./src/common/loaders/loader.mongo.database.init.js";
 // Logger Initialization
-import {logger} from "./src/common/utils/utils.logger.js";
+import { logger } from "./src/common/utils/utils.logger.js";
 import initMainMiddlewares from "./src/common/loaders/loader.middleware.init.js";
 global.logger = logger;
 
@@ -26,7 +26,6 @@ const __dirname = dirname(__filename);
 
 // Express App Initialization
 const app = express();
-
 
 // Middleware: CORS Configuration
 app.use(cors());
@@ -42,7 +41,6 @@ process.on("unhandledRejection", (error) => {
     logger.error("Unhandled Rejection:", error);
 });
 
-
 /** -------------------------------
  *  App Initialization
  * --------------------------------
@@ -50,13 +48,11 @@ process.on("unhandledRejection", (error) => {
  */
 (async function initializeApp() {
     try {
+        // Route Initialization
+        initRoutes({ app });
 
-         // Route Initialization
-         initRoutes({ app });
-         
         // Middleware Initialization
-        initMainMiddlewares({app,express});
-       
+        initMainMiddlewares({ app, express });
 
         // Database Initialization
         await initMongoDatabase();
