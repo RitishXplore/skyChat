@@ -75,14 +75,6 @@ export const registerform = apiSlice.injectEndpoints({
       }),
     }),
 
-  
-    // getGroupConversation : builder.query({
-    //   query: ({ groupId, chatId }) => ({
-    //     url: `/v1/chats/groupconversation/${chatId}?groupId=${groupId}`, // Include userId as a query parameter
-    //     method: 'GET',
-    //   }),
-    //   providesTags : ['GetConversation']
-    // }),
     
     sendMessage: builder.mutation({
       query: ({chatId,sender,content}) => ({
@@ -122,16 +114,16 @@ export const registerform = apiSlice.injectEndpoints({
         body: { userId1, userId2 }
       }),
 
-      // onQueryStarted: async (arg, { dispatch, queryFulfilled }) => {
-      //   try {
-      //     await queryFulfilled;
-      //     dispatch(
-      //       apiSlice.util.invalidateTags(['GetListUsers'])
-      //     );
-      //   } catch (error) {
-      //     console.error("Error refetching Users:", error);
-      //   }
-      // }
+      onQueryStarted: async (arg, { dispatch, queryFulfilled }) => {
+        try {
+          await queryFulfilled;
+          dispatch(
+            apiSlice.util.invalidateTags(['GetListUsers'])
+          );
+        } catch (error) {
+          console.error("Error refetching Users:", error);
+        }
+      }
     }),
     overrideExisting: false,
   }),
@@ -148,6 +140,5 @@ export const {
   useGetConversationQuery,
   useStartChatMutation,
   useGetGroupUsersQuery,
-  useGetGroupConversationQuery,
   
 } = registerform;

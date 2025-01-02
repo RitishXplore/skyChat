@@ -75,8 +75,6 @@ const Conversation = ({ selectedChat }) => {
       setChat_History(
         userChat.messages.map((message) => ({
           ...message,
-          outgoing: message.sender === userId,
-          incoming: message.sender !== userId,
         }))
       );
     }

@@ -68,7 +68,7 @@ export const getChatListForUser = async (req, res) => {
 
     try {
         // Find all chats involving the user and sort by the last message timestamp in descending order
-        const chats = await Chat.find({ participants: userId })
+        const chats = await Chat.find({ participants: userId, isGroupChat:false })
             .populate({
                 path: 'participants',
                 select: 'username email profilePicture status',

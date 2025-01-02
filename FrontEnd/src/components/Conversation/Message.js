@@ -1,8 +1,6 @@
 import { Box, Stack } from '@mui/material';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { DocMsg, LinkMsg, MediaMsg, ReplyMsg, TextMsg, TimeLine } from './MsgTypes';
-
-import { useEffect, useRef } from 'react';
 
 const Message = ({ menu, Chat_History }) => {
   const messagesEndRef = useRef(null);
@@ -11,6 +9,11 @@ const Message = ({ menu, Chat_History }) => {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [Chat_History]);
+
+  // Ensure Chat_History is an array before trying to map over it
+  if (!Array.isArray(Chat_History)) {
+    return null; // Or return a loading state, depending on your needs
+  }
 
   return (
     <Box p={3} sx={{ height: "100%", overflowY: "auto" }}>
@@ -42,6 +45,5 @@ const Message = ({ menu, Chat_History }) => {
     </Box>
   );
 }
-
 
 export default Message;
