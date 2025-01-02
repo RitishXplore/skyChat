@@ -9,6 +9,7 @@ export const registerform = apiSlice.injectEndpoints({
         url: `/v1/chats/list/${userId}`,
         method: "GET",
       }),
+      providesTags : ['GetListUsers']
     }),
 
     RegisterUser: builder.mutation({
@@ -56,13 +57,14 @@ export const registerform = apiSlice.injectEndpoints({
         }
       },
     }),
-    
+
     getConversation: builder.query({
-      query: ({ userId,chatId }) => ({
+      query: ({ userId, chatId }) => ({
         url: `/v1/chats/conversation/${chatId}?userId=${userId}`, // Include userId as a query parameter
         method: 'GET',
       }),
     }),
+<<<<<<< Updated upstream
     
     sendMessage: builder.mutation({
       query: ({chatId,sender,content}) => ({
@@ -74,6 +76,9 @@ export const registerform = apiSlice.injectEndpoints({
         },
       }),
     }),
+=======
+
+>>>>>>> Stashed changes
 
     // New Search Users API
     SearchUsers: builder.query({
@@ -82,9 +87,30 @@ export const registerform = apiSlice.injectEndpoints({
         method: "GET",
       }),
     }),
-    
+
+
+    StartChat: builder.mutation({
+      query: ({ userId1, userId2 }) => ({
+        url: `/v1/chats/startchat`,
+        method: 'POST',
+        body: { userId1, userId2 }
+      }),
+
+      onQueryStarted: async (arg, { dispatch, queryFulfilled }) => {
+        try {
+          await queryFulfilled;
+          dispatch(
+            apiSlice.util.invalidateTags(['GetListUsers'])
+          );
+        } catch (error) {
+          console.error("Error refetching Users:", error);
+        }
+      }
+    }),
+    overrideExisting: false,
   }),
-  overrideExisting: false,
+
+
 });
 
 export const {
@@ -93,5 +119,7 @@ export const {
   useSendMessageMutation,
   useLoginUserMutation,
   useSearchUsersQuery,
-  useGetConversationQuery, // Export search users query hook
+  useGetConversationQuery,
+  useStartChatMutation,
+  
 } = registerform;

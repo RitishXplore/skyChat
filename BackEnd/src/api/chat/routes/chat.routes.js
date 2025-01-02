@@ -15,7 +15,7 @@ import {
 const router = express.Router();
 
 // Chat Routes
-router.post('/', startChat);
+router.post('/startchat', startChat);
 router.get('/:userId', getChatsForUser);
 router.get('/list/:userId',getChatListForUser);
 router.get('/conversation/:chatId',getConversation)

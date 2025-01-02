@@ -2,7 +2,6 @@ import express from "express";
 import { register ,login,verifyEmail, searchUsers} from "../controllers/auth.controller.js";
 const app = express();
 app.use(express.json());
-
 const router = express.Router();
 
 // Assuming you have already defined and imported your User model
