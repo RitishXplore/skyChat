@@ -8,9 +8,9 @@ import { useSelector } from "react-redux";
 import SharedMessages from "../../components/SharedMessages";
 import StarredMessages from "../../components/StarredMessages";
 
-const GeneralApp = () => {
+const GeneralApp = ({ socket }) => {
   const theme = useTheme();
-  const { sidebar } = useSelector((store) => store.app); // Access our store inside component
+  const { sidebar } = useSelector((store) => store.app);
 
   // State to manage selected chat
   const [selectedChat, setSelectedChat] = useState(null);
@@ -38,7 +38,7 @@ const GeneralApp = () => {
         }}
       >
         {selectedChat ? (
-          <Conversation selectedChat={selectedChat} />
+          <Conversation selectedChat={selectedChat} socket={socket} />
         ) : (
           <Box
             sx={{
@@ -53,7 +53,7 @@ const GeneralApp = () => {
         )}
       </Box>
 
-      {/* Sidebar (Contact, Starred, Shared) */}
+      {/* Sidebar */}
       {sidebar.open &&
         (() => {
           switch (sidebar.type) {

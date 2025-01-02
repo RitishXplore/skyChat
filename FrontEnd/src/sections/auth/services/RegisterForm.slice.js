@@ -73,7 +73,6 @@ export const registerform = apiSlice.injectEndpoints({
         url: `/v1/chats/conversation/${chatId}?userId=${userId}`, // Include userId as a query parameter
         method: 'GET',
       }),
-      providesTags : ['GetConversation']
     }),
 
   
@@ -123,16 +122,16 @@ export const registerform = apiSlice.injectEndpoints({
         body: { userId1, userId2 }
       }),
 
-      onQueryStarted: async (arg, { dispatch, queryFulfilled }) => {
-        try {
-          await queryFulfilled;
-          dispatch(
-            apiSlice.util.invalidateTags(['GetListUsers'])
-          );
-        } catch (error) {
-          console.error("Error refetching Users:", error);
-        }
-      }
+      // onQueryStarted: async (arg, { dispatch, queryFulfilled }) => {
+      //   try {
+      //     await queryFulfilled;
+      //     dispatch(
+      //       apiSlice.util.invalidateTags(['GetListUsers'])
+      //     );
+      //   } catch (error) {
+      //     console.error("Error refetching Users:", error);
+      //   }
+      // }
     }),
     overrideExisting: false,
   }),

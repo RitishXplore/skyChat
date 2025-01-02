@@ -177,7 +177,10 @@ export const getConversation = async (req, res) => {
             const isSender = message.sender.toString() === userId;
 
             return {
+                chatId: chat._id,
+                userId :userId,
                 message: message.content,
+                messageId: message._id,
                 type: 'msg',
                 outgoing: !isSender,
                 incoming: isSender,

@@ -47,8 +47,15 @@ const Actions = [
     }
 ];
 
-const ChatInput = ({setOpenPicker, message, setMessage}) => {
+const ChatInput = ({setOpenPicker, message, setMessage, handleSendMessage}) => {
     const [openAction, setOpenAction] = useState(false);
+
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            handleSendMessage(); // Send message on Enter key press
+        }
+    };
 
     return (
         <StyledInput
@@ -57,6 +64,7 @@ const ChatInput = ({setOpenPicker, message, setMessage}) => {
             variant='filled'
             value={message}
             onChange={(e) => setMessage(e.target.value)} // Update the message
+            onKeyDown={handleKeyDown} // Add keyDown event handler
             InputProps={{
                 disableUnderline: true,
                 startAdornment: (
@@ -89,25 +97,26 @@ const ChatInput = ({setOpenPicker, message, setMessage}) => {
     );
 };
 
-const Footer = ({ user }) => {
+const Footer = ({ user, socket }) => {
     const userId = Cookies.get("userId");
     const theme = useTheme();
     const [openPicker, setOpenPicker] = useState(false);
-    const [message, setMessage] = useState(""); // State to manage the message input
-
-    const [sendMessage, { isLoading }] = useSendMessageMutation(); // Mutation hook
+    const [message, setMessage] = useState(""); 
 
     const handleSendMessage = async () => {
         if (message.trim()) {
-            try {
-                await sendMessage({chatId: user.chatId , sender : userId , content : message}); // Call the mutation
-                setMessage(""); // Clear the message input after sending
-            } catch (error) {
-                console.error("Error sending message:", error);
-            }
+            socket.emit("sendMessage", {
+                chatId: user.chatId,
+                sender: userId,
+                content: message,
+                type: "msg",
+                timestamp: new Date().toISOString(),
+            });
+    
+            setMessage(""); // Clear the message input
         }
     };
-
+    
     const handleEmojiSelect = async (emoji)=> {
         setMessage((prevMessage)=> prevMessage + emoji.native)
     }
@@ -120,12 +129,12 @@ const Footer = ({ user }) => {
                     <Box sx={{ display: openPicker ? 'inline' : 'none', zIndex: 10, position: 'fixed', bottom: 81, right: 100 }}>
                         <Picker theme={theme.palette.mode} data={data} onEmojiSelect={handleEmojiSelect} />
                     </Box>
-                    <ChatInput setOpenPicker={setOpenPicker} message={message} setMessage={setMessage} />
+                    <ChatInput setOpenPicker={setOpenPicker} message={message} setMessage={setMessage} handleSendMessage={handleSendMessage} />
                 </Stack>
 
                 <Box sx={{ height: 48, width: 48, backgroundColor: theme.palette.primary.main, borderRadius: 1.5 }}>
                     <Stack sx={{ height: '100%', width: '100%', alignItems: 'center', justifyContent: 'center' }}>
-                        <IconButton onClick={handleSendMessage} disabled={isLoading}>
+                        <IconButton onClick={handleSendMessage} >
                             <PaperPlaneTilt color='#fff' />
                         </IconButton>
                     </Stack>
