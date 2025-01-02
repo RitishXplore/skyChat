@@ -57,8 +57,8 @@ export const registerform = apiSlice.injectEndpoints({
     }),
     
     getConversation: builder.query({
-      query: ({ userId }) => ({
-        url: `/v1/chats/conversation/67758280c9a8eb8ef276a885?userId=${userId}`, // Include userId as a query parameter
+      query: ({ userId,chatId }) => ({
+        url: `/v1/chats/conversation/${chatId}?userId=${userId}`, // Include userId as a query parameter
         method: 'GET',
       }),
     }),

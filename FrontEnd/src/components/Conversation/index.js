@@ -8,9 +8,9 @@ import { useGetConversationQuery } from "../../sections/auth/services/RegisterFo
 
 const Conversation = ({ selectedChat }) => {
   const theme = useTheme();
-
+console.log(selectedChat);
   const { data: userChat, error, isLoading } = useGetConversationQuery({
-    userId: selectedChat?.id,
+    userId: selectedChat?.id , chatId :selectedChat?.chatId,
   });
 
   if (isLoading) {

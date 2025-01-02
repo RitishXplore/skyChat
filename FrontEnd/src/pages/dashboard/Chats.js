@@ -29,6 +29,7 @@ const Chats = ({ onSelectChat }) => {
   const mappedUsers = users.map((user) => {
     return {
       id: user.userId,
+      chatId:user.chatId,
       username: user.username,
       img: user.profilePicture?.url || user.profilePicture,
       online: user.status,
