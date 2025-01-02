@@ -2,12 +2,12 @@ import { Avatar, Badge, Box, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import StyledBadge from './StyledBadge';
 
-const ChatElement = ({ id, username, img, msg, time, online, unread }) => {
+const ChatElement = ({ id, username, img, msg, time, online, unread, onClick }) => {
   const theme = useTheme();
 
   // Check if img is an SVG and process accordingly
   const isSvg = img && img.endsWith('.svg');
-  
+
   // Function to safely handle SVG embedding (only if you control the SVG content)
   const renderAvatar = () => {
     if (isSvg) {
@@ -31,8 +31,13 @@ const ChatElement = ({ id, username, img, msg, time, online, unread }) => {
         borderRadius: 1,
         backgroundColor:
           theme.palette.mode === 'light' ? '#fff' : theme.palette.background.default,
+        cursor: onClick ? 'pointer' : 'default',  // Make it clickable only if onClick is passed
+        '&:hover': {
+          backgroundColor: onClick ? '#f5f5f5' : 'transparent', // Add hover effect only if clickable
+        },
       }}
       p={2}
+      onClick={onClick}  // Handle onClick event if passed
     >
       <Stack direction="row" alignItems="center" justifyContent="space-between">
         <Stack direction="row" spacing={2}>
@@ -58,9 +63,7 @@ const ChatElement = ({ id, username, img, msg, time, online, unread }) => {
           <Typography sx={{ fontWeight: 600 }} variant="caption">
             {time}
           </Typography>
-          {unread > 0 && (
-            <Badge color="primary" badgeContent={unread} />
-          )}
+          {unread > 0 && <Badge color="primary" badgeContent={unread} />}
         </Stack>
       </Stack>
     </Box>
