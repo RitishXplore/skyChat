@@ -29,9 +29,9 @@ const sendEmail = async ({ to, subject, html, text }) => {
         });
 
         const info = await transporter.sendMail({
-            from: `"No Reply" <${process.env.EMAIL_USER}>`,
+            from: `<${process.env.EMAIL_USER}>`,
             to,
-            subject,
+            subject : "Email Verification for SkyChat",
             text,
             html,
         });

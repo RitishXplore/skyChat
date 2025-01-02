@@ -449,7 +449,7 @@ const permissionSchema = new mongoose.Schema({
 
 // Export all models
 const User = mongoose.model('User', userSchema);
-const Group = mongoose.model('Group', groupSchema);
+//const Group = mongoose.model('Group', groupSchema);
 const Call = mongoose.model('Call', callSchema);
 const Media = mongoose.model('Media', mediaSchema);
 const Reaction = mongoose.model('Reaction', reactionSchema);

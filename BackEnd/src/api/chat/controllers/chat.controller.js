@@ -62,6 +62,7 @@ export const getChatsForUser = async (req, res) => {
         res.status(500).json({ message: 'Failed to fetch chats', error: error.message });
     }
 };
+
 export const getChatListForUser = async (req, res) => {
     const { userId } = req.params;
 

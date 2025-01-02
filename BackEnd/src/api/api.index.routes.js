@@ -2,6 +2,7 @@ import express from "express";
 import adminAuthRoutes from "./admin/admin.routes.js"
 import authRoutes from "./auth/routes/auth.routes.js"
 import chatsRoutes from "./chat/routes/chat.routes.js"
+import groupRoutes from "./group/routes/group.routes.js"
 const router = express.Router();
 const routes =[
     {
@@ -18,6 +19,12 @@ const routes =[
         method :"use",
         url:"/chats",
         handler: chatsRoutes
+    },
+    {
+
+        method: "use",
+        url: "/group",
+        handler: groupRoutes
     }
 ]
 

@@ -61,6 +61,7 @@ export const login = async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
+
 export const searchUsers = async (req, res) => {
     try {
         const { query } = req.query;
@@ -128,3 +129,5 @@ export const getProfile = async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
+
+//group
