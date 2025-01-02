@@ -63,8 +63,8 @@ export const registerform = apiSlice.injectEndpoints({
         url: `/v1/chats/conversation/${chatId}?userId=${userId}`, // Include userId as a query parameter
         method: 'GET',
       }),
+      providesTags : ['GetConversation']
     }),
-<<<<<<< Updated upstream
     
     sendMessage: builder.mutation({
       query: ({chatId,sender,content}) => ({
@@ -75,10 +75,18 @@ export const registerform = apiSlice.injectEndpoints({
           "Content-Type": "application/json",
         },
       }),
+      onQueryStarted: async (arg, { dispatch, queryFulfilled }) => {
+        try {
+          await queryFulfilled;
+          dispatch(
+            apiSlice.util.invalidateTags(['GetConversation'])
+          );
+        } catch (error) {
+          console.error("Error refetching Users:", error);
+        }
+      }
+      
     }),
-=======
-
->>>>>>> Stashed changes
 
     // New Search Users API
     SearchUsers: builder.query({
