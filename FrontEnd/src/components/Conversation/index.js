@@ -45,7 +45,7 @@ console.log(selectedChat);
       </Box>
 
       {/* Chat footer */}
-      <Footer />
+      <Footer user ={selectedChat} />
     </Stack>
   );
 };

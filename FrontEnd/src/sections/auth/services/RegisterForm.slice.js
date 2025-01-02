@@ -1,3 +1,4 @@
+
 import { apiSlice } from "../../../services/apiSlice";
 import Cookies from "js-cookie"; // Import js-cookie to manage cookies
 
@@ -63,6 +64,16 @@ export const registerform = apiSlice.injectEndpoints({
       }),
     }),
     
+    sendMessage: builder.mutation({
+      query: ({chatId,sender,content}) => ({
+        url: `/v1/chats/messages`,
+        method: "POST",
+        body: {chatId,sender,content},
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }),
+    }),
 
     // New Search Users API
     SearchUsers: builder.query({
@@ -79,6 +90,7 @@ export const registerform = apiSlice.injectEndpoints({
 export const {
   useGetUsersQuery,
   useRegisterUserMutation,
+  useSendMessageMutation,
   useLoginUserMutation,
   useSearchUsersQuery,
   useGetConversationQuery, // Export search users query hook

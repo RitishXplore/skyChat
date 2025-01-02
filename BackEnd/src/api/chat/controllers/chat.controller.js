@@ -178,8 +178,8 @@ export const getConversation = async (req, res) => {
             return {
                 message: message.content,
                 type: 'msg',
-                outgoing: isSender,
-                incoming: !isSender,
+                outgoing: !isSender,
+                incoming: isSender,
                 timestamp: message.createdAt,
                 isSender,
             };
