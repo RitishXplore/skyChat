@@ -4,14 +4,21 @@ import { useTheme } from "@mui/material/styles";
 import Header from "./Header";
 import Footer from "./Footer";
 import Message from "./Message";
-import { useGetConversationQuery } from "../../sections/auth/services/RegisterForm.slice";
+import { useGetConversationQuery, useGetGroupConversationQuery } from "../../sections/auth/services/RegisterForm.slice";
 
-const Conversation = ({ selectedChat }) => {
+
+const Conversation = ({ selectedChat}) => {
   const theme = useTheme();
 console.log(selectedChat);
   const { data: userChat, error, isLoading } = useGetConversationQuery({
     userId: selectedChat?.id , chatId :selectedChat?.chatId,
   });
+
+  // const { data: userGroupChat } = useGetGroupConversationQuery({
+  //   userId: selectedGroup?.id , chatId :selectedGroup?.chatId,
+  // });
+
+
 
   if (isLoading) {
     return (

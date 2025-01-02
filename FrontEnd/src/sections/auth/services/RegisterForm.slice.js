@@ -12,6 +12,16 @@ export const registerform = apiSlice.injectEndpoints({
       providesTags : ['GetListUsers']
     }),
 
+    GetGroupUsers: builder.query({
+      query: (userId) => ({
+        url: `/v1/group/grouplist/${userId}`,
+        method: "GET",
+      }),
+      providesTags : ['GetGroupListUsers']
+    }),
+
+
+
     RegisterUser: builder.mutation({
       query: (user) => ({
         url: `/v1/auth/signup`,
@@ -65,6 +75,15 @@ export const registerform = apiSlice.injectEndpoints({
       }),
       providesTags : ['GetConversation']
     }),
+
+  
+    // getGroupConversation : builder.query({
+    //   query: ({ groupId, chatId }) => ({
+    //     url: `/v1/chats/groupconversation/${chatId}?groupId=${groupId}`, // Include userId as a query parameter
+    //     method: 'GET',
+    //   }),
+    //   providesTags : ['GetConversation']
+    // }),
     
     sendMessage: builder.mutation({
       query: ({chatId,sender,content}) => ({
@@ -129,5 +148,7 @@ export const {
   useSearchUsersQuery,
   useGetConversationQuery,
   useStartChatMutation,
+  useGetGroupUsersQuery,
+  useGetGroupConversationQuery,
   
 } = registerform;
