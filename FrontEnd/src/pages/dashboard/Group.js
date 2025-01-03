@@ -5,50 +5,67 @@ import { MagnifyingGlass, Plus } from 'phosphor-react';
 import { useTheme } from '@mui/material/styles';
 import { SimpleBarStyle } from '../../components/Scrollbar';
 import '../../css/global.css';
-import { ChatList } from '../../data';
 import ChatElement from '../../components/ChatElement';
-import CreateGroup from '../../sections/main/CreateGroup';
-import { useGetGroupUsersQuery } from "../../sections/auth/services/RegisterForm.slice";
+import CreateGroupDialog from '../../sections/main/CreateGroup';
+import {  useGetGroupUsersQuery } from "../../sections/auth/services/RegisterForm.slice";
 import Cookies from "js-cookie";
-import Conversation from '../../components/Conversation'; // Import the Conversation component
+import GroupConversation from '../../components/Conversation'; // Import the Group Conversation component
 
-const Group = () => {
+const GroupChat = () => {
     const theme = useTheme();
-    const { data: usersData } = useGetGroupUsersQuery(Cookies.get("userId"));
-    const [users, setUsers] = useState([]);
-    const [openDialog, setOpenDialog] = useState(false);
+    const { data: groupsData } = useGetGroupUsersQuery(Cookies.get("userId"));
+    const [groups, setGroups] = useState([]);
+    const [isCreateGroupDialogOpen, setIsCreateGroupDialogOpen] = useState(false);
     const [selectedGroup, setSelectedGroup] = useState(null); // State to store the selected group
 
-    const handleCloseDialog = () => {
-        setOpenDialog(false);
+    // Close the Create Group Dialog
+    const handleCloseCreateGroupDialog = () => {
+        setIsCreateGroupDialogOpen(false);
     };
 
+    // Update groups data when API response changes
     useEffect(() => {
-        if (Array.isArray(usersData)) {
-            setUsers(usersData);
+        if (Array.isArray(groupsData)) {
+            setGroups(groupsData);
         } else {
-            console.log("No valid users data found.", usersData);
+            console.log("No valid group data found.", groupsData);
         }
-    }, [usersData]);
+    }, [groupsData]);
 
-    const mappedUsers = users.map((user) => {
+    // Map groups data for UI consumption
+    const mappedGroups = groups.map((group) => {
         return {
-            id: user.userId,
-            chatId: user.groupId,
-            username: user.name,
-            img: user.icon,
-            online: user.status,
+            chatId: group.chatId,
+            groupId: group.groupId,
+            name: group.name,
+            img: group.icon,
+            online: group.status,
+            userId : Cookies.get("userId"),
+
         };
     });
 
+    // Handle group selection
     const handleSelectGroup = (group) => {
-        setSelectedGroup(group); // Update the state with the selected group
+        console.log("🔄 handleSelectGroup Triggered");
+        console.log("📝 Group Passed to Handler:", group);
+    
+        setSelectedGroup((prevGroup) => {
+            console.log("📊 Previous State:", prevGroup);
+            console.log("✅ Updating State with Group:", group);
+            return group; // Update the state
+        });
     };
+    
+    useEffect(() => {
+        console.log("🚀 State Updated - Selected Group:", selectedGroup);
+    }, [selectedGroup]);
+    
 
     return (
         <>
             <Stack direction={'row'} sx={{ width: '100%' }}>
-                {/* Left */}
+                {/* Sidebar: Group List */}
                 <Box sx={{
                     height: '100vh',
                     backgroundColor: (theme) => theme.palette.mode === 'light' ? '#F8FAFF' : theme.palette.background,
@@ -56,36 +73,44 @@ const Group = () => {
                     boxShadow: '0px 0px 2px rgba(0,0,0,0.25)'
                 }}>
                     <Stack p={3} spacing={2} sx={{ maxHeight: '100vh' }}>
+                        {/* Header */}
                         <Stack>
-                            <Typography variant='h5'>Group</Typography>
+                            <Typography variant='h5'>Groups</Typography>
                         </Stack>
+
+                        {/* Search Bar */}
                         <Stack sx={{ width: '100%' }}>
                             <Search>
                                 <SearchIconWrapper>
                                     <MagnifyingGlass color="#709CE6" />
                                 </SearchIconWrapper>
-                                <StyledInputBase placeholder='Search...' inputProps={{ "aria-label": "search" }} />
+                                <StyledInputBase placeholder='Search Groups...' inputProps={{ "aria-label": "search" }} />
                             </Search>
                         </Stack>
+
+                        {/* Create Group Button */}
                         <Stack direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
                             <Typography variant='subtitle2' component={Link}>Create New Group</Typography>
-                            <IconButton onClick={() => { setOpenDialog(true) }}>
+                            <IconButton onClick={() => { setIsCreateGroupDialogOpen(true) }}>
                                 <Plus style={{ color: theme.palette.primary.main }} />
                             </IconButton>
                         </Stack>
+
                         <Divider />
+
+                        {/* Group List */}
                         <Stack spacing={3} className='scrollbar' sx={{ flexGrow: 1, overflowY: 'scroll', height: '100%' }}>
                             <SimpleBarStyle timeout={500} clickOnTrack={false}>
                                 <Stack spacing={2.4}>
                                     <Typography variant="subtitle2" sx={{ color: "#676767" }}>
                                         All Groups
                                     </Typography>
-                                    {Array.isArray(mappedUsers) && mappedUsers.length > 0 ? (
-                                        mappedUsers.map((el) => (
+                                    {Array.isArray(mappedGroups) && mappedGroups.length > 0 ? (
+                                        mappedGroups.map((group) => (
                                             <ChatElement
-                                                key={el.id}
-                                                {...el}
-                                                onClick={() => handleSelectGroup(el)} // Update selected group on click
+                                                key={group.id}
+                                                {...group}
+                                                onClick={() => handleSelectGroup(group)} // Update selected group on click
                                             />
                                         ))
                                     ) : (
@@ -99,7 +124,7 @@ const Group = () => {
                     </Stack>
                 </Box>
 
-                {/* Right */}
+                {/* Right: Group Conversation */}
                 <Box
                     sx={{
                         height: '100vh',
@@ -109,7 +134,7 @@ const Group = () => {
                 >
                     {/* Render the selected group's conversation */}
                     {selectedGroup ? (
-                        <Conversation selectedChat={selectedGroup} /> // Pass the selected group to Conversation
+                        <GroupConversation selectedChat={selectedGroup} /> // Pass the selected group to Conversation
                     ) : (
                         <Box
                             sx={{
@@ -124,9 +149,16 @@ const Group = () => {
                     )}
                 </Box>
             </Stack>
-            {openDialog && <CreateGroup open={openDialog} handleClose={handleCloseDialog} />}
+
+            {/* Create Group Dialog */}
+            {isCreateGroupDialogOpen && (
+                <CreateGroupDialog 
+                    open={isCreateGroupDialogOpen} 
+                    handleClose={handleCloseCreateGroupDialog} 
+                />
+            )}
         </>
     );
 };
 
-export default Group;
+export default GroupChat;

@@ -41,11 +41,11 @@ const Header = ({ user }) => {
               }}
               variant="dot"
             >
-              <Avatar alt={user?.username} src={user?.img} />
+              <Avatar alt={user?.name} src={user?.img} />
             </StyledBadge>
           </Box>
           <Stack spacing={0.2}>
-            <Typography variant="subtitle2">{user?.username}</Typography>
+            <Typography variant="subtitle2">{user?.name}</Typography>
             <Typography variant="caption">{user?.status}</Typography>
           </Stack>
         </Stack>

@@ -61,6 +61,12 @@ export const getGroup = async (req, res) => {
             return res.status(404).json({ message: 'No group chats found for this user.' });
         }
 
+        // Create a mapping of groupId to chatId for reference
+        const groupChatMap = chats.reduce((acc, chat) => {
+            acc[chat.groupId.toString()] = chat._id;
+            return acc;
+        }, {});
+
         // Fetch details of all the groups
         const groups = await Group.find({
             _id: { $in: chats.map(chat => chat.groupId) } // Match groups from chat's groupId
@@ -75,7 +81,7 @@ export const getGroup = async (req, res) => {
             return res.status(404).json({ message: 'No groups found for the chats.' });
         }
 
-        // Format the response as an array of groups
+        // Format the response as an array of groups with their corresponding chatId
         const response = groups.map(group => ({
             groupId: group._id,
             name: group.name,
@@ -83,14 +89,7 @@ export const getGroup = async (req, res) => {
             status: group.status,
             isAdminOnly: group.isAdminOnly,
             createdBy: group.createdBy,
-            members: group.members.map(member => ({
-                userId: member.userId._id,
-                username: member.userId.username,
-                email: member.userId.email,
-                profilePicture: member.userId.profilePicture,
-                status: member.userId.status,
-                role: member.role
-            })),
+            chatId: groupChatMap[group._id.toString()] || null,
         }));
 
         res.status(200).json(response);
@@ -99,9 +98,10 @@ export const getGroup = async (req, res) => {
     }
 };
 
+
 export const getGroupConversation = async (req, res) => {
     const { chatId } = req.params;
-    const { groupId } = req.query; // Get userId from query parameters
+    const { userId } = req.query; // Get userId from query parameters
 
     try {
         const chat = await Chat.findById(chatId);
@@ -111,10 +111,13 @@ export const getGroupConversation = async (req, res) => {
 
         const messages = await Message.find({ chatId }).sort({ createdAt: 1 });
         const transformedMessages = messages.map(message => {
-            const isSender = message.sender.toString() === groupId;
+            const isSender = message.sender.toString() === userId;
 
             return {
+                chatId: chat._id,
+                userId :userId,
                 message: message.content,
+                messageId: message._id,
                 type: 'msg',
                 outgoing: !isSender,
                 incoming: isSender,

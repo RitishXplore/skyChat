@@ -167,18 +167,29 @@ export const getConversation = async (req, res) => {
     const { userId } = req.query; // Get userId from query parameters
 
     try {
+        // Fetch the chat by ID
         const chat = await Chat.findById(chatId);
         if (!chat) {
             return res.status(404).json({ message: 'Chat not found' });
         }
 
-        const messages = await Message.find({ chatId }).sort({ createdAt: 1 });
+        // Fetch messages and populate sender details
+        const messages = await Message.find({ chatId })
+            .sort({ createdAt: 1 })
+            .populate({
+                path: 'sender',
+                select: 'username profilePicture', // Fetch only the name and image fields
+            });
+
         const transformedMessages = messages.map(message => {
-            const isSender = message.sender.toString() === userId;
+            const isSender = message.sender._id.toString() === userId;
 
             return {
                 chatId: chat._id,
-                userId :userId,
+                groupId: chat.groupId,
+                userId: message.sender._id,
+                username: message.sender.username, // Add sender's username
+                userImage: message.sender.profilePicture, // Add sender's image
                 message: message.content,
                 messageId: message._id,
                 type: 'msg',
@@ -194,6 +205,7 @@ export const getConversation = async (req, res) => {
             messages: transformedMessages,
         });
     } catch (error) {
+        console.error('Error fetching conversation:', error);
         res.status(500).json({ message: 'Failed to fetch conversation', error: error.message });
     }
 };

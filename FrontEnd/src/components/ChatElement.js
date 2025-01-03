@@ -2,7 +2,7 @@ import { Avatar, Badge, Box, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import StyledBadge from './StyledBadge';
 
-const ChatElement = ({ id, username, img, msg, time, online, unread, onClick }) => {
+const ChatElement = ({ id, name, img, msg, time, online, unread, onClick }) => {
   const theme = useTheme();
 
   // Check if img is an SVG and process accordingly
@@ -54,7 +54,7 @@ const ChatElement = ({ id, username, img, msg, time, online, unread, onClick }) 
           )}
 
           <Stack spacing={0.3}>
-            <Typography variant="subtitle2">{username}</Typography>
+            <Typography variant="subtitle2">{name}</Typography>
             <Typography variant="caption">{msg}</Typography>
           </Stack>
         </Stack>

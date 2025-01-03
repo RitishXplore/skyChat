@@ -14,7 +14,7 @@ const Conversation = ({ selectedChat }) => {
   const userId = Cookies.get("userId"); // Get the logged-in user's ID
 
   const { data: userChat, error, isLoading } = useGetConversationQuery({
-    userId: selectedChat?.id,
+    userId: userId,
     chatId: selectedChat?.chatId,
   });
 
@@ -110,7 +110,7 @@ const Conversation = ({ selectedChat }) => {
         width={"100%"}
         sx={{ flexGrow: 1, height: "100%", overflowY: "scroll" }}
       >
-        <Message menu={true} Chat_History={Chat_History} />
+        <Message menu={false} Chat_History={Chat_History} />
       </Box>
 
       {/* Chat Footer */}

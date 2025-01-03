@@ -33,7 +33,7 @@ const Message = ({ menu, Chat_History }) => {
                         case 'reply':
                             return <ReplyMsg key={el.id || el.timestamp} el={el} menu={menu} />;
                         default:
-                            return <TextMsg key={el.id || el.timestamp} el={el} menu={menu} />;
+                            return <TextMsg key={el.id || el.timestamp} el={el} menu={menu}  />;
                     }
                 default:
                     return null;

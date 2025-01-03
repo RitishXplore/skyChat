@@ -110,17 +110,53 @@ const MediaMsg = ({el,menu}) => {
 const TextMsg = ({el,menu}) => {
     const theme = useTheme();
     return (
-        <Stack direction='row' justifyContent={el.incoming ? 'start' : 'end'}>
-            <Box p={1.5} sx={{
-                backgroundColor: el.incoming ? theme.palette.background.default :
-                    theme.palette.primary.main, borderRadius: 1.5, width: 'max-content'
-            }}>
-                <Typography variant='body2' color={el.incoming ? theme.palette.text : '#fff'}>
-                    {el.message}
-                </Typography>
-            </Box>
-            {menu && <MessageOptions/>}
-        </Stack>
+<Stack direction='row' justifyContent={el.incoming ? 'start' : 'end'}>
+    <Box 
+        p={1.5} 
+        sx={{
+            backgroundColor: el.incoming ? theme.palette.background.default : theme.palette.primary.main, 
+            borderRadius: 1.5, 
+            width: 'max-content',
+            display: 'flex',
+            alignItems: 'flex-end', // Align timestamp at the bottom
+        }}
+    >
+        {/* Message Content */}
+        <Typography 
+            variant='body2' 
+            color={el.incoming ? theme.palette.text : '#fff'}
+            sx={{
+                maxWidth: '250px', // Optional: limit width for long messages
+                marginBottom: '4px', // Space above the timestamp
+            }}
+        >
+            {el.message}
+        </Typography>
+
+        {/* Timestamp */}
+        <Typography
+            variant="caption"
+            sx={{
+                lineHeight:0.5,
+                color: el.incoming ? theme.palette.text.secondary : '#fff', // Color based on sender/receiver
+                fontSize: '0.75rem',
+                marginLeft: '8px', // Space between message and timestamp
+                whiteSpace: 'nowrap', // Prevent text from wrapping
+                alignSelf: 'flex-end', // Ensure timestamp is aligned at the bottom
+            }}
+        >
+            {new Date(el.timestamp).toLocaleTimeString([], {
+                hour: '2-digit',
+                minute: '2-digit',
+            })}
+        </Typography>
+    </Box>
+
+    {menu && <MessageOptions />}
+</Stack>
+
+
+
     )
 }
 

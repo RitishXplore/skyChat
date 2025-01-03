@@ -30,7 +30,7 @@ const Chats = ({ onSelectChat }) => {
     return {
       id: user.userId,
       chatId : user.chatId,
-      username: user.username,
+      name: user.username,
       img: user.profilePicture?.url || user.profilePicture,
       online: user.status,
     };
