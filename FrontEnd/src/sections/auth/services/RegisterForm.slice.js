@@ -111,7 +111,23 @@ export const registerform = apiSlice.injectEndpoints({
         method: "GET",
       }),
     }),
-
+    CreateGroup:builder.mutation({
+      query: ({groupName,userIds,createdBy}) => ({
+        url: `/v1/group/groupchat`,
+        method: 'POST',
+        body:{groupName,userIds,createdBy}
+      }),
+      onQueryStarted: async (arg, { dispatch, queryFulfilled }) => {
+        try {
+          await queryFulfilled;
+          dispatch(
+            apiSlice.util.invalidateTags(['GetGroupListUsers'])
+          );
+        } catch (error) {
+          console.error("Error refetching Users:", error);
+        }
+      }
+    }),
 
     StartChat: builder.mutation({
       query: ({ userId1, userId2 }) => ({
@@ -146,6 +162,7 @@ export const {
   useGetConversationQuery,
   useStartChatMutation,
   useGetGroupUsersQuery,
-  useGetAllUsersQuery
+  useGetAllUsersQuery,
+  useCreateGroupMutation
   
 } = registerform;

@@ -6,13 +6,13 @@ import * as Yup from 'yup';
 import FormProvider from '../../components/hook-form/FormProvider';
 import { RHFTextField } from '../../components/hook-form';
 import RHFAutocomplete from '../../components/hook-form/RHFAutocomplete';
-import { useGetAllUsersQuery } from '../auth/services/RegisterForm.slice';
-
+import { useGetAllUsersQuery, useCreateGroupMutation } from '../auth/services/RegisterForm.slice';
+import Cookies from "js-cookie";
 // Transition for Dialog
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
-
+  const currentUserId = Cookies.get("userId");
 // Validation Schema
 const NewGroupSchema = Yup.object().shape({
   title: Yup.string().required('Title is required'),
@@ -59,9 +59,20 @@ const CreateGroupForm = ({ handleClose }) => {
     formState: { errors, isSubmitting, isValid },
   } = methods;
 
+  // Use the createGroup mutation
+  const [createGroup, { isLoading: isCreating, error }] = useCreateGroupMutation();
+
   const onSubmit = async (data) => {
     try {
-      console.log('Form Data:', data);
+      const groupData = {
+        groupName: data.title,
+        userIds: data.members.map((member) => member.id),
+        createdBy: currentUserId, // Replace with actual user ID
+      };
+      console.log(groupData);
+      // Call the API to create the group
+      await createGroup(groupData).unwrap();
+      handleClose();  // Close the dialog after the group is created
     } catch (error) {
       console.error('Error:', error);
     }
@@ -91,8 +102,8 @@ const CreateGroupForm = ({ handleClose }) => {
         {/* Action Buttons */}
         <Stack spacing={2} direction="row" alignItems="center" justifyContent="end">
           <Button onClick={handleCloseDialog}>Cancel</Button>
-          <Button type="submit" variant="contained" disabled={isSubmitting || !isValid}>
-            {isSubmitting ? 'Creating...' : 'Create'}
+          <Button type="submit" variant="contained" disabled={isSubmitting || !isValid || isCreating}>
+            {isSubmitting || isCreating ? 'Creating...' : 'Create'}
           </Button>
         </Stack>
       </Stack>
