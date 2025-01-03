@@ -61,7 +61,7 @@ io.on("connection", (socket) => {
             
             // Update the chat's last message
             await Chat.findByIdAndUpdate(chatId, { lastMessage: savedMessage._id });
-
+       
             // Emit the saved message back to all clients in the chat room
             io.to(chatId).emit("receiveMessage", savedMessage);
         } catch (error) {

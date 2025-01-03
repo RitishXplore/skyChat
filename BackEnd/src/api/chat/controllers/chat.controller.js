@@ -186,16 +186,15 @@ export const getConversation = async (req, res) => {
 
             return {
                 chatId: chat._id,
+                sender : message.sender._id,
+                isGroupChat: chat.isGroupChat,
                 groupId: chat.groupId,
                 userId: message.sender._id,
                 username: message.sender.username, // Add sender's username
                 userImage: message.sender.profilePicture, // Add sender's image
                 message: message.content,
                 messageId: message._id,
-                type: 'msg',
-                outgoing: !isSender,
-                incoming: isSender,
-                timestamp: message.createdAt,
+                createdAt: message.createdAt,
                 isSender,
             };
         });

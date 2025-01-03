@@ -12,7 +12,6 @@ const Conversation = ({ selectedChat }) => {
   const theme = useTheme();
   const [Chat_History, setChat_History] = useState([]);
   const userId = Cookies.get("userId"); // Get the logged-in user's ID
-
   const { data: userChat, error, isLoading } = useGetConversationQuery({
     userId: userId,
     chatId: selectedChat?.chatId,
@@ -42,8 +41,9 @@ const Conversation = ({ selectedChat }) => {
           incoming: message.sender !== userId,
           messageId:message._id,
           message :message.content
-        };
 
+        };
+        
         setChat_History((prev) => {
           // Prevent duplicate messages by checking the message ID
           const exists = prev.some((msg) => msg.messageId === formattedMessage.messageId);
@@ -53,6 +53,7 @@ const Conversation = ({ selectedChat }) => {
           }
           return prev;
         });
+       
       };
 
       if (!isListenerAdded.current) {
@@ -67,6 +68,7 @@ const Conversation = ({ selectedChat }) => {
         isListenerAdded.current = false; // Reset ref on cleanup
       };
     }
+    console.log(Chat_History)
   }, [selectedChat?.chatId, userId]);
 
   // 🚀 Sync Messages from API
@@ -75,6 +77,9 @@ const Conversation = ({ selectedChat }) => {
       setChat_History(
         userChat.messages.map((message) => ({
           ...message,
+          type:'msg',
+          outgoing: message.sender === userId,
+          incoming: message.sender !== userId,
         }))
       );
     }
@@ -110,7 +115,7 @@ const Conversation = ({ selectedChat }) => {
         width={"100%"}
         sx={{ flexGrow: 1, height: "100%", overflowY: "scroll" }}
       >
-        <Message menu={false} Chat_History={Chat_History} />
+        <Message menu={false} Chat_History={Chat_History}  />
       </Box>
 
       {/* Chat Footer */}

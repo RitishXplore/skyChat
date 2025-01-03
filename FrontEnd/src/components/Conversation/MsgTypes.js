@@ -107,59 +107,73 @@ const MediaMsg = ({el,menu}) => {
   )
 }
 
-const TextMsg = ({el,menu}) => {
+const TextMsg = ({ el, menu, isGroupChat, isSender }) => {
     const theme = useTheme();
+  
+    // Ensure the timestamp is correctly formatted
+    const timestamp = el.createdAt ? new Date(el.createdAt).toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit',
+    }) : '';
+  
     return (
-<Stack direction='row' justifyContent={el.incoming ? 'start' : 'end'}>
-    <Box 
-        p={1.5} 
-        sx={{
+      <Stack direction="row" justifyContent={el.incoming ? 'start' : 'end'}>
+        <Box 
+          p={1.5} 
+          sx={{
             backgroundColor: el.incoming ? theme.palette.background.default : theme.palette.primary.main, 
             borderRadius: 1.5, 
             width: 'max-content',
             display: 'flex',
-            alignItems: 'flex-end', // Align timestamp at the bottom
-        }}
-    >
-        {/* Message Content */}
-        <Typography 
-            variant='body2' 
+            flexDirection: 'column', // Stack message and timestamp vertically
+            alignItems: el.incoming ? 'flex-start' : 'flex-end', // Align left for incoming, right for outgoing
+          }}
+        >
+          {/* Sender's Name (for group chat and non-sender messages) */}
+          {isGroupChat && !isSender && el.username && (
+            <Typography 
+              variant="body2" 
+              color={theme.palette.text.secondary} 
+              sx={{ fontWeight: 'bold', marginBottom: '4px' }}
+            >
+              {el.username}
+            </Typography>
+          )}
+  
+          {/* Message Content */}
+          <Typography 
+            variant="body2" 
             color={el.incoming ? theme.palette.text : '#fff'}
             sx={{
-                maxWidth: '250px', // Optional: limit width for long messages
-                marginBottom: '4px', // Space above the timestamp
+              maxWidth: '250px', // Optional: limit width for long messages
+              marginBottom: '4px', // Space above the timestamp
             }}
-        >
+          >
             {el.message}
-        </Typography>
-
-        {/* Timestamp */}
-        <Typography
+          </Typography>
+  
+          {/* Timestamp */}
+          <Typography
             variant="caption"
             sx={{
-                lineHeight:0.5,
-                color: el.incoming ? theme.palette.text.secondary : '#fff', // Color based on sender/receiver
-                fontSize: '0.75rem',
-                marginLeft: '8px', // Space between message and timestamp
-                whiteSpace: 'nowrap', // Prevent text from wrapping
-                alignSelf: 'flex-end', // Ensure timestamp is aligned at the bottom
+              lineHeight: 0.5,
+              color: el.incoming ? theme.palette.text.secondary : '#fff', // Color based on sender/receiver
+              fontSize: '0.75rem',
+              marginLeft: '8px', // Space between message and timestamp
+              whiteSpace: 'nowrap', // Prevent text from wrapping
+              alignSelf: 'flex-end', // Ensure timestamp is aligned at the bottom
             }}
-        >
-            {new Date(el.timestamp).toLocaleTimeString([], {
-                hour: '2-digit',
-                minute: '2-digit',
-            })}
-        </Typography>
-    </Box>
-
-    {menu && <MessageOptions />}
-</Stack>
-
-
-
-    )
-}
-
+          >
+            {timestamp}
+          </Typography>
+        </Box>
+  
+        {/* Optional Menu (e.g., for options like delete, reply) */}
+        {menu && <MessageOptions />}
+      </Stack>
+    );
+  }
+  
 const TimeLine = ({ el }) => {
     const theme = useTheme();
     return <Stack direction='row' alignItems='center' justifyContent='space-between'>
