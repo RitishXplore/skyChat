@@ -105,6 +105,12 @@ export const registerform = apiSlice.injectEndpoints({
         method: "GET",
       }),
     }),
+    GetAllUsers: builder.query({
+      query: () => ({
+        url: `/v1/auth/all`,
+        method: "GET",
+      }),
+    }),
 
 
     StartChat: builder.mutation({
@@ -140,5 +146,6 @@ export const {
   useGetConversationQuery,
   useStartChatMutation,
   useGetGroupUsersQuery,
+  useGetAllUsersQuery
   
 } = registerform;
