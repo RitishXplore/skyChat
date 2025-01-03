@@ -62,16 +62,17 @@ export const login = async (req, res) => {
     }
 };
 
+// Search users by username or email
 export const searchUsers = async (req, res) => {
     try {
         const { query } = req.query;
 
-        // If the search query is not provided
+        // Validate if search query is provided
         if (!query) {
             return res.status(400).json({ message: 'Search query is required.' });
         }
 
-        // Perform a case-insensitive regex search on both 'username' and 'email'
+        // Perform a case-insensitive regex search on 'username' and 'email'
         const users = await User.find({
             $or: [
                 { username: { $regex: query, $options: 'i' } }, // Case-insensitive search on username
@@ -79,13 +80,31 @@ export const searchUsers = async (req, res) => {
             ]
         }).select('-password -verificationToken'); // Exclude sensitive fields
 
-        if (users.length === 0) {
+        // Handle case when no users are found
+        if (!users.length) {
             return res.status(404).json({ message: 'No users found.' });
         }
 
         res.status(200).json({ users });
     } catch (error) {
-        console.error('Search Error:', error);
+        console.error('Search Error:', error.message);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
+
+export const getAllUsers = async (req, res) => {
+    try {
+        // Fetch all users and exclude sensitive fields
+        const users = await User.find().select('-password -verificationToken');
+
+        // Handle case when no users are found
+        if (!users.length) {
+            return res.status(404).json({ message: 'No users found.' });
+        }
+
+        res.status(200).json({ users });
+    } catch (error) {
+        console.error('Fetch Users Error:', error.message);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
